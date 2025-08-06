@@ -1,0 +1,206 @@
+{
+  "2025": {
+    "single": 15000,
+    "head_of_household": 22500,
+    "married_filing_jointly": 30000,
+    "married_filing_separately": 15000
+  },
+  "2024": {
+    "single": 14600,
+    "head_of_household": 21900,
+    "married_filing_jointly": 29200,
+    "married_filing_separately": 14600
+  },
+  "2023": {
+    "single": 13850,
+    "head_of_household": 20800,
+    "married_filing_jointly": 27700,
+    "married_filing_separately": 13850
+  },
+  "2022": {
+    "single": 12950,
+    "head_of_household": 19400,
+    "married_filing_jointly": 25900,
+    "married_filing_separately": 12950
+  },
+  "2021": {
+    "single": 12550,
+    "head_of_household": 18800,
+    "married_filing_jointly": 25100,
+    "married_filing_separately": 12550
+  },
+  "2020": {
+    "single": 12400,
+    "head_of_household": 18650,
+    "married_filing_jointly": 24800,
+    "married_filing_separately": 12400
+  },
+  "2019": {
+    "single": 12200,
+    "head_of_household": 18350,
+    "married_filing_jointly": 24400,
+    "married_filing_separately": 12200
+  },
+  "2018": {
+    "single": 12000,
+    "head_of_household": 18000,
+    "married_filing_jointly": 24000,
+    "married_filing_separately": 12000
+  },
+  "2017": {
+    "single": 6350,
+    "head_of_household": 9350,
+    "married_filing_jointly": 12700,
+    "married_filing_separately": 6350
+  },
+  "2016": {
+    "single": 6300,
+    "head_of_household": 9300,
+    "married_filing_jointly": 12600,
+    "married_filing_separately": 6300
+  },
+  "2015": {
+    "single": 6300,
+    "head_of_household": 9250,
+    "married_filing_jointly": 12600,
+    "married_filing_separately": 6300
+  },
+  "2014": {
+    "single": 6200,
+    "head_of_household": 9100,
+    "married_filing_jointly": 12400,
+    "married_filing_separately": 6200
+  },
+  "2013": {
+    "single": 6100,
+    "head_of_household": 8950,
+    "married_filing_jointly": 12200,
+    "married_filing_separately": 6100
+  },
+  "2012": {
+    "single": 5950,
+    "head_of_household": 8700,
+    "married_filing_jointly": 11900,
+    "married_filing_separately": 5950
+  },
+  "2011": {
+    "single": 5800,
+    "head_of_household": 8500,
+    "married_filing_jointly": 11600,
+    "married_filing_separately": 5800
+  },
+  "2010": {
+    "single": 5700,
+    "head_of_household": 8400,
+    "married_filing_jointly": 11400,
+    "married_filing_separately": 5700
+  },
+  "2009": {
+    "single": 5700,
+    "head_of_household": 8350,
+    "married_filing_jointly": 11400,
+    "married_filing_separately": 5700
+  },
+  "2008": {
+    "single": 5450,
+    "head_of_household": 8000,
+    "married_filing_jointly": 10900,
+    "married_filing_separately": 5450
+  },
+  "2007": {
+    "single": 5350,
+    "head_of_household": 7850,
+    "married_filing_jointly": 10700,
+    "married_filing_separately": 5350
+  },
+  "2006": {
+    "single": 5150,
+    "head_of_household": 7550,
+    "married_filing_jointly": 10300,
+    "married_filing_separately": 5150
+  },
+  "2005": {
+    "single": 5000,
+    "head_of_household": 7300,
+    "married_filing_jointly": 10000,
+    "married_filing_separately": 5000
+  },
+  "2004": {
+    "single": 4850,
+    "head_of_household": 7150,
+    "married_filing_jointly": 9700,
+    "married_filing_separately": 4850
+  },
+  "2003": {
+    "single": 4750,
+    "head_of_household": 7000,
+    "married_filing_jointly": 9500,
+    "married_filing_separately": 3975
+  },
+  "2002": {
+    "single": 4700,
+    "head_of_household": 6900,
+    "married_filing_jointly": 7850,
+    "married_filing_separately": 3925
+  },
+  "2001": {
+    "single": 4550,
+    "head_of_household": 6650,
+    "married_filing_jointly": 7600,
+    "married_filing_separately": 3800
+  },
+  "2000": {
+    "single": 4400,
+    "head_of_household": 6450,
+    "married_filing_jointly": 7350,
+    "married_filing_separately": 3675
+  },
+  "1999": {
+    "single": 4300,
+    "head_of_household": 6350,
+    "married_filing_jointly": 7200,
+    "married_filing_separately": 3600
+  },
+  "1998": {
+    "single": 4250,
+    "head_of_household": 6250,
+    "married_filing_jointly": 7100,
+    "married_filing_separately": 3550
+  },
+  "1997": {
+    "single": 4150,
+    "head_of_household": 6050,
+    "married_filing_jointly": 6900,
+    "married_filing_separately": 3450
+  },
+  "1996": {
+    "single": 4000,
+    "head_of_household": 5900,
+    "married_filing_jointly": 6700,
+    "married_filing_separately": 3350
+  },
+  "1995": {
+    "single": 3900,
+    "head_of_household": 5750,
+    "married_filing_jointly": 6550,
+    "married_filing_separately": 3275
+  },
+  "1994": {
+    "single": 3800,
+    "head_of_household": 5600,
+    "married_filing_jointly": 6350,
+    "married_filing_separately": 3175
+  },
+  "1993": {
+    "single": 3700,
+    "head_of_household": 5450,
+    "married_filing_jointly": 6200,
+    "married_filing_separately": 3100
+  },
+  "1992": {
+    "single": 3600,
+    "head_of_household": 5250,
+    "married_filing_jointly": 6000,
+    "married_filing_separately": 3000
+  }
+}

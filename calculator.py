@@ -59,7 +59,6 @@ def calculate_federal_tax(income, year, status, deduction_override: int=None):
     deduction = get_federal_standard_deduction(year, status) if deduction_override is None else deduction_override
     federal_brackets = get_federal_tax_brackets(year, status)
 
-    # federal income tax
     federal_tax = _tax_using_brackets(income - deduction, federal_brackets)
 
     return {
@@ -75,6 +74,7 @@ def calculate_federal_fica(income, year):
     oasdi_tax = _tax_using_brackets(income, fica_brackets['OASDI'])
     medicare_tax = _tax_using_brackets(income, fica_brackets['HI'])
 
+    # afforadable medicare tax
     if year >= 2013 and income > 200000:
         medicare_tax['tax_amount'] += (income - 200000) * 0.009
         medicare_tax['marginal_tax_rate'] += 0.009
@@ -107,13 +107,14 @@ def main():
         print(f"For an income of ${args.income:,.2f} in {args.year} with '{args.status}' filing status:")
         print(f"Federal tax owed: ${federal_result['federal_tax']['tax_amount']:,.2f}")
         print(f"FICA tax owed: ${fica_result['total_fica_tax']:,.2f}")
+        print(f"Total tax owed: ${federal_result['federal_tax']['tax_amount'] + fica_result['total_fica_tax']:,.2f}")
 
+        print(f"--------------------------------")
         print(f"Federal tax rate: {federal_result['federal_tax_rate']:.2%}")
         print(f"FICA tax rate: {fica_result['total_fica_tax_rate']:.2%}")
-        
-        print(f"Total tax owed: ${federal_result['federal_tax']['tax_amount'] + fica_result['total_fica_tax']:,.2f}")
         print(f"Total tax rate: {(federal_result['federal_tax']['tax_amount'] + fica_result['total_fica_tax']) / args.income:.2%}")
-        
+
+        print(f"--------------------------------")
         print(f"Federal taxable income: ${federal_result['taxable_income']:,.2f}")
         print(f"Federal deduction: ${federal_result['deduction']:,.2f}")
     except KeyError as e:

@@ -31,6 +31,23 @@ def get_federal_fica_brackets(year):
     return fica_data[str(year)]
 
 
+def get_state_tax_brackets_and_deductions(year, state):
+    state_data = load_json(f'data/state/{state}.json')
+    try:
+        return state_data[str(year)]
+    except KeyError:
+        raise KeyError(f"Invalid state '{state}' for year {year}. Available states: {', '.join(state_data[str(year)].keys())}")
+
+
+def get_city_tax_brackets(year, city):
+    city_data = load_json(f'data/city/{city}.json')
+    try:
+        return city_data[str(year)]
+    except KeyError:
+        raise KeyError(f"Invalid city '{city}' for year {year}. Available cities: {', '.join(city_data[str(year)].keys())}")
+
+
+
 def _tax_using_brackets(income, brackets):
     tax = 0.0
     marginal_tax_rate = 0.0
@@ -87,6 +104,15 @@ def calculate_federal_fica(income, year):
         'marginal_fica_tax_rate': max(oasdi_tax['marginal_tax_rate'], medicare_tax['marginal_tax_rate']),
     }
 
+def calculate_state_tax(income, year, state, status):
+    data = get_state_tax_brackets_and_deductions(year, state)
+    income_after_deduction = income - data['deductions'][status]
+    return _tax_using_brackets(income_after_deduction, data['brackets'][status])
+
+def calculate_city_tax(income, year, city, status):
+    city_brackets = get_city_tax_brackets(year, city)
+    return _tax_using_brackets(income, city_brackets[status])
+
 def main():
     """Main function to parse arguments and calculate tax."""
     parser = argparse.ArgumentParser(description="Calculate federal income tax.")
@@ -96,31 +122,57 @@ def main():
     parser.add_argument('--status', type=str, default='single',
                         choices=['single', 'married_filing_jointly', 'married_filing_separately', 'head_of_household'],
                         help="Your filing status (default: single).")
-
+    parser.add_argument('--state', type=str, default='newyork',
+                        help="The state you live in (default: newyork).")
+    parser.add_argument('--city', type=str, default='newyorkcity',
+                        help="The city you live in (default: newyorkcity).")
     args = parser.parse_args()
 
 
-    try:
-        federal_result = calculate_federal_tax(args.income, args.year, args.status)
-        fica_result = calculate_federal_fica(args.income, args.year)
+    # try:
+    federal_result = calculate_federal_tax(args.income, args.year, args.status)
+    fica_result = calculate_federal_fica(args.income, args.year)
 
-        print(f"For an income of ${args.income:,.2f} in {args.year} with '{args.status}' filing status:")
-        print(f"Federal tax owed: ${federal_result['federal_tax']['tax_amount']:,.2f}")
-        print(f"FICA tax owed: ${fica_result['total_fica_tax']:,.2f}")
-        print(f"Total tax owed: ${federal_result['federal_tax']['tax_amount'] + fica_result['total_fica_tax']:,.2f}")
+    total_federal_tax = federal_result['federal_tax']['tax_amount'] + fica_result['total_fica_tax']
 
-        print(f"--------------------------------")
-        print(f"Federal tax rate: {federal_result['federal_tax_rate']:.2%}")
-        print(f"FICA tax rate: {fica_result['total_fica_tax_rate']:.2%}")
-        print(f"Total tax rate: {(federal_result['federal_tax']['tax_amount'] + fica_result['total_fica_tax']) / args.income:.2%}")
+    state_result = calculate_state_tax(args.income, args.year, args.state, args.status)
+    city_result = calculate_city_tax(args.income, args.year, args.city, args.status)
+    
+    total_tax = total_federal_tax + state_result['tax_amount'] + city_result['tax_amount']
+    total_tax_rate = total_tax / args.income
 
-        print(f"--------------------------------")
-        print(f"Federal taxable income: ${federal_result['taxable_income']:,.2f}")
-        print(f"Federal deduction: ${federal_result['deduction']:,.2f}")
-    except KeyError as e:
-        print(f"Error: {e}")
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+    print(f"For an income of ${args.income:,.2f} in {args.year} with '{args.status}' filing status:")
+    print(f"Federal tax owed: ${federal_result['federal_tax']['tax_amount']:,.2f}")
+    print(f"FICA tax owed: ${fica_result['total_fica_tax']:,.2f}")
+    print(f"Total tax owed: ${total_federal_tax:,.2f}")
+
+    print(f"--------------------------------")
+    print(f"Federal tax rate: {federal_result['federal_tax_rate']:.2%}")
+    print(f"FICA tax rate: {fica_result['total_fica_tax_rate']:.2%}")
+    print(f"Total tax rate: {(federal_result['federal_tax']['tax_amount'] + fica_result['total_fica_tax']) / args.income:.2%}")
+
+    print(f"--------------------------------")
+    print(f"Federal taxable income: ${federal_result['taxable_income']:,.2f}")
+    print(f"Federal deduction: ${federal_result['deduction']:,.2f}")
+
+    print(f"--------------------------------")
+    print(f"State tax owed: ${state_result['tax_amount']:,.2f}")
+    print(f"City tax owed: ${city_result['tax_amount']:,.2f}")
+    print(f"Total tax owed: ${state_result['tax_amount'] + city_result['tax_amount']:,.2f}")
+
+    print(f"--------------------------------")
+    print(f"State tax rate: {state_result['tax_amount'] / args.income:.2%}")
+    print(f"City tax rate: {city_result['tax_amount'] / args.income:.2%}")
+    print(f"Total tax rate: {(state_result['tax_amount'] + city_result['tax_amount']) / args.income:.2%}")
+
+    print(f"--------------------------------")
+    print(f"Total Tax: ${total_tax:,.2f}")
+    print(f"Total Tax Rate: {total_tax_rate:.2%}")
+
+    # except KeyError as e:
+    #     print(f"Error: {e}")
+    # except Exception as e:
+    #     print(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
     main() 

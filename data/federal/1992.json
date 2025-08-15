@@ -1,0 +1,66 @@
+{
+    "brackets": {
+        "married_filing_jointly": [
+            [
+                0.0,
+                15.0
+            ],
+            [
+                35800.0,
+                28.0
+            ],
+            [
+                86500.0,
+                31.0
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                0.0,
+                15.0
+            ],
+            [
+                17900.0,
+                28.0
+            ],
+            [
+                43250.0,
+                31.0
+            ]
+        ],
+        "single": [
+            [
+                0.0,
+                15.0
+            ],
+            [
+                21450.0,
+                28.0
+            ],
+            [
+                51900.0,
+                31.0
+            ]
+        ],
+        "head_of_household": [
+            [
+                0.0,
+                15.0
+            ],
+            [
+                28750.0,
+                28.0
+            ],
+            [
+                74150.0,
+                31.0
+            ]
+        ]
+    },
+    "deductions": {
+        "single": 3600,
+        "head_of_household": 5250,
+        "married_filing_jointly": 6000,
+        "married_filing_separately": 3000
+    }
+}

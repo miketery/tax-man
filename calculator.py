@@ -10,43 +10,24 @@ def load_json(file_path):
         print(f"Error: {file_path} not found.")
         return
 
-def get_federal_tax_brackets(year, status):
-    tax_data = load_json('data/federal/tax_brackets.json')
-    try:
-        return tax_data[str(year)][status]
-    except KeyError:
-        filing_statuses = list(tax_data[str(year)].keys())
-        raise KeyError(f"Invalid filing status '{status}' for year {year}. Available statuses: {', '.join(filing_statuses)}")
+def get_federal_tax_data(year):
+    tax_data = load_json(f'data/federal/{year}.json')
+    return tax_data
 
-def get_federal_standard_deduction(year, status):
-    standard_deductions = load_json('data/federal/standard_deductions.json')
-    try:
-        return standard_deductions[str(year)][status]
-    except KeyError:
-        filing_statuses = list(standard_deductions[str(year)].keys())
-        raise KeyError(f"Invalid filing status '{status}' for year {year}. Available statuses: {', '.join(filing_statuses)}")
 
 def get_federal_fica_brackets(year):
     fica_data = load_json('data/federal/fica_rates.json')
     return fica_data[str(year)]
 
 
-def get_state_tax_brackets_and_deductions(year, state):
-    state_data = load_json(f'data/state/{state}.json')
-    try:
-        return state_data[str(year)]
-    except KeyError:
-        raise KeyError(f"Invalid state '{state}' for year {year}. Available states: {', '.join(state_data[str(year)].keys())}")
+def get_state_tax_data(year, state):
+    state_data = load_json(f'data/state/{state}/{year}.json')
+    return state_data
 
 
 def get_city_tax_brackets(year, city):
-    city_data = load_json(f'data/city/{city}.json')
-    try:
-        return city_data[str(year)]
-    except KeyError:
-        raise KeyError(f"Invalid city '{city}' for year {year}. Available cities: {', '.join(city_data[str(year)].keys())}")
-
-
+    city_data = load_json(f'data/city/{city}/{year}.json')
+    return city_data
 
 def _tax_using_brackets(income, brackets):
     tax = 0.0
@@ -73,10 +54,13 @@ def _tax_using_brackets(income, brackets):
 
 def calculate_federal_tax(income, year, status, deduction_override: int=None):
     """Calculates the federal income tax."""
-    deduction = get_federal_standard_deduction(year, status) if deduction_override is None else deduction_override
-    federal_brackets = get_federal_tax_brackets(year, status)
-
-    federal_tax = _tax_using_brackets(income - deduction, federal_brackets)
+    federal_data = get_federal_tax_data(year)
+    if 'deductions' in federal_data:
+        deduction = federal_data['deductions'][status] if deduction_override is None else deduction_override
+    else:
+        deduction = 0 if deduction_override is None else deduction_override
+    tax_brackets = federal_data['brackets'][status]
+    federal_tax = _tax_using_brackets(income - deduction, tax_brackets)
 
     return {
         'federal_tax': federal_tax,
@@ -105,13 +89,24 @@ def calculate_federal_fica(income, year):
     }
 
 def calculate_state_tax(income, year, state, status):
-    data = get_state_tax_brackets_and_deductions(year, state)
-    income_after_deduction = income - data['deductions'][status]
-    return _tax_using_brackets(income_after_deduction, data['brackets'][status])
+    data = get_state_tax_data(year, state)
+    brackets = data['brackets'][status]
+    if 'deductions' in data:
+        deduction = data['deductions'][status]
+    else:
+        deduction = 0
+    income_after_deduction = income - deduction
+    return _tax_using_brackets(income_after_deduction, brackets)
 
 def calculate_city_tax(income, year, city, status):
-    city_brackets = get_city_tax_brackets(year, city)
-    return _tax_using_brackets(income, city_brackets[status])
+    data = get_city_tax_brackets(year, city)
+    brackets = data['brackets'][status]
+    if 'deductions' in data:
+        deduction = data['deductions'][status]
+    else:
+        deduction = 0
+    income_after_deduction = income - deduction
+    return _tax_using_brackets(income_after_deduction, brackets)
 
 def main():
     """Main function to parse arguments and calculate tax."""
@@ -122,10 +117,10 @@ def main():
     parser.add_argument('--status', type=str, default='single',
                         choices=['single', 'married_filing_jointly', 'married_filing_separately', 'head_of_household'],
                         help="Your filing status (default: single).")
-    parser.add_argument('--state', type=str, default='newyork',
-                        help="The state you live in (default: newyork).")
-    parser.add_argument('--city', type=str, default='newyorkcity',
-                        help="The city you live in (default: newyorkcity).")
+    parser.add_argument('--state', type=str, default='new-york',
+                        help="The state you live in (default: new-york).")
+    parser.add_argument('--city', type=str, default='new-york-city',
+                        help="The city you live in (default: new-york-city).")
     args = parser.parse_args()
 
 

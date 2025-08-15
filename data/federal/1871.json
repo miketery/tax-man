@@ -1,0 +1,28 @@
+{
+    "brackets": {
+        "married_filing_jointly": [
+            [
+                2000.0,
+                2.5
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                2000.0,
+                2.5
+            ]
+        ],
+        "single": [
+            [
+                2000.0,
+                2.5
+            ]
+        ],
+        "head_of_household": [
+            [
+                2000.0,
+                2.5
+            ]
+        ]
+    }
+}

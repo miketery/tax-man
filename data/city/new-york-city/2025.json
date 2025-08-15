@@ -1,5 +1,15 @@
 {
-    "2025": {
+    "name": "New York City",
+    "type": "city",
+    "city_code": "NYC",
+    "year": 2025,
+    "deductions": {
+        "single": 8000,
+        "married_filing_jointly": 16050,
+        "married_filing_separately": 8000,
+        "head_of_household": 11200
+    },
+    "brackets": {
         "single": [
             [0.0, 3.078],
             [12000.0, 3.762],

@@ -1,4 +1,4 @@
 #! /bin/bash
 
-uv venv .venv
+uv sync
 source .venv/bin/activate

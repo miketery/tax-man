@@ -1,0 +1,26 @@
+{
+    "name": "North Carolina",
+    "type": "state",
+    "state_code": "NC",
+    "year": 2026,
+    "deductions": {
+        "single": 16100,
+        "married_filing_jointly": 32200,
+        "married_filing_separately": 16100,
+        "head_of_household": 24150
+    },
+    "brackets": {
+        "single": [
+            [0, 4]
+        ],
+        "married_filing_separately": [
+            [0, 4]
+        ],
+        "married_filing_jointly": [
+            [0, 4]
+        ],
+        "head_of_household": [
+            [0, 4]
+        ]
+    }
+}

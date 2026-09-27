@@ -1,1 +1,4 @@
-pandas 
+streamlit>=1.40
+altair>=5
+pandas
+pytest

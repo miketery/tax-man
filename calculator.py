@@ -105,7 +105,10 @@ def calculate_state_tax(income, year, state, status):
     else:
         deduction = 0
     income_after_deduction = income - deduction
-    return _tax_using_brackets(income_after_deduction, brackets)
+    result = _tax_using_brackets(income_after_deduction, brackets)
+    result['deduction'] = deduction
+    result['taxable_income'] = income_after_deduction
+    return result
 
 def calculate_city_tax(income, year, city, status):
     data = get_city_tax_brackets(year, city)
@@ -171,6 +174,8 @@ def compute_tax_summary(income, year, status, state=None, city=None):
                 'tax': state_res['tax_amount'],
                 'effective_rate': state_res['tax_amount'] / income if income > 0 else 0,
                 'marginal_rate': state_res['marginal_tax_rate'] / 100,
+                'deduction': state_res['deduction'],
+                'taxable_income': state_res['taxable_income'],
             }
             total_tax += state_res['tax_amount']
         except TaxDataNotFoundError as e:
@@ -241,6 +246,8 @@ def format_text(results):
                 lines.append(f"State tax owed: ${st['tax']:,.2f}")
                 lines.append(f"State effective rate: {st['effective_rate']:.2%}")
                 lines.append(f"State marginal rate: {st['marginal_rate']:.2%}")
+                lines.append(f"State deduction: ${st['deduction']:,.2f}")
+                lines.append(f"State taxable income: ${st['taxable_income']:,.2f}")
 
         # City
         if r['city'] is not None:
@@ -278,6 +285,7 @@ def format_csv(results):
         'federal_deduction', 'federal_taxable_income',
         'fica_social_security', 'fica_medicare', 'fica_total',
         'state_tax', 'state_effective_rate', 'state_marginal_rate',
+        'state_deduction', 'state_taxable_income',
         'city_tax', 'city_effective_rate', 'city_marginal_rate',
         'total_tax', 'total_effective_rate', 'take_home',
     ]
@@ -308,10 +316,14 @@ def format_csv(results):
             row['state_tax'] = r['state']['tax']
             row['state_effective_rate'] = r['state']['effective_rate']
             row['state_marginal_rate'] = r['state']['marginal_rate']
+            row['state_deduction'] = r['state']['deduction']
+            row['state_taxable_income'] = r['state']['taxable_income']
         else:
             row['state_tax'] = ''
             row['state_effective_rate'] = ''
             row['state_marginal_rate'] = ''
+            row['state_deduction'] = ''
+            row['state_taxable_income'] = ''
         # City fields
         if r['city'] is not None and 'error' not in r['city']:
             row['city_tax'] = r['city']['tax']

@@ -86,3 +86,27 @@ def test_location_data_is_well_formed(path: Path):
     for status in STATUSES:
         kw = {'city': path.parent.name} if data['type'] == 'city' else {'state': path.parent.name}
         assert calc.calculate(150_000, data['year'], status, **kw).total > 0
+
+
+def test_2026_federal_and_fica():
+    r = calc.calculate(100_000, 2026, 'single')
+    # 2026 standard deduction 16,100 -> taxable 83,900
+    assert r.by_category()['federal'] == pytest.approx(1240 + (50_400 - 12_400) * 0.12 + (83_900 - 50_400) * 0.22)
+    assert calc.calculate_federal_fica(200_000, 2026)['oasdi_tax'] == pytest.approx(184_500 * 0.062)
+
+
+def test_latest_year():
+    assert calc.latest_year() == calc.federal_years()[0]
+    assert calc.latest_year(state='oregon') == 2025
+    with pytest.raises(calc.TaxDataNotFoundError):
+        calc.latest_year(state='atlantis')
+
+
+def test_cli_formats(capsys, monkeypatch):
+    monkeypatch.setattr('sys.argv', ['calculator.py', '100000', '--state', 'texas', '--city', 'new-york-city', '-f', 'csv'])
+    calc.main()
+    lines = capsys.readouterr().out.strip().splitlines()
+    assert len(lines) == 3 and lines[0].startswith('income,year')
+    monkeypatch.setattr('sys.argv', ['calculator.py', '100000', '-f', 'json'])
+    calc.main()
+    assert json.loads(capsys.readouterr().out)[0]['total_tax'] > 0

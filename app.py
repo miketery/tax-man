@@ -112,14 +112,15 @@ def location_notes(location_key, year):
 # ---------------------------------------------------------------------------
 
 years = calc.federal_years()
-# Years that have at least one state file are the useful default range.
 with st.sidebar:
     st.header('Your situation')
     income = st.number_input('Annual gross salary ($)', min_value=0, value=100_000, step=5_000, format='%d')
     status = st.selectbox(
         'Filing status', list(calc.FILING_STATUSES), format_func=calc.FILING_STATUSES.get
     )
-    year = st.selectbox('Tax year', years, index=0)
+    # Default to the newest year with the most state data (federal data can run ahead of state data).
+    default_year = max(years[:5], key=lambda y: (len(calc.available_states(y)), y))
+    year = st.selectbox('Tax year', years, index=years.index(default_year))
     st.caption(
         'Estimates for W-2 wage income using the standard deduction. '
         'Ignores credits, itemized deductions, pre-tax contributions (401k, HSA) and phase-outs.'

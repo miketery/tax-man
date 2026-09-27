@@ -1,0 +1,45 @@
+{
+    "name": "North Carolina",
+    "type": "state",
+    "state_code": "NC",
+    "year": 2026,
+    "deductions": {
+        "single": 12750,
+        "married_filing_jointly": 25500,
+        "married_filing_separately": 12750,
+        "head_of_household": 19125
+    },
+    "brackets": {
+        "single": [
+            [
+                0,
+                3.99
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                0,
+                3.99
+            ]
+        ],
+        "married_filing_jointly": [
+            [
+                0,
+                3.99
+            ]
+        ],
+        "head_of_household": [
+            [
+                0,
+                3.99
+            ]
+        ]
+    },
+    "notes": [
+        "Flat 3.99% for 2026 (scheduled step-down from 4.25% under S.L. 2023-134).",
+        "NC standard deduction is set by state law and does not follow the federal amount."
+    ],
+    "sources": [
+        "https://www.ncdor.gov/taxes-forms/individual-income-tax"
+    ]
+}

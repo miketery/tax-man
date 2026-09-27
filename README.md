@@ -5,15 +5,16 @@ your tax burden across states and cities.
 
 ## Setup
 
+Requires [uv](https://docs.astral.sh/uv/). Dependencies live in `pyproject.toml` / `uv.lock`.
+
 ```bash
-./setup.sh              # creates .venv with uv and installs requirements
-source .venv/bin/activate
+uv sync                 # or ./setup.sh
 ```
 
 ## Web UI
 
 ```bash
-streamlit run app.py
+uv run streamlit run app.py    # http://localhost:8501
 ```
 
 - **Estimate** – salary, filing status and year in the sidebar; pick a state or
@@ -27,17 +28,21 @@ streamlit run app.py
 ## CLI
 
 ```bash
-python calculator.py 120000 --status married_filing_jointly --state california
-python calculator.py 120000 --city new-york-city   # city implies its state
+uv run python calculator.py 120000 --status married_filing_jointly --state california
+uv run python calculator.py 120000 --city new-york-city   # city implies its state
+# compare several locations; --format text (default), csv or json
+uv run python calculator.py 120000 --state texas --state california --city new-york-city -f csv
 ```
+
+`--year` defaults to the newest year that has data for every requested location.
 
 ## Data
 
 | Path | Contents |
 |------|----------|
-| `data/federal/<year>.json` | Federal brackets (1862–2025) and standard deductions |
+| `data/federal/<year>.json` | Federal brackets (1862–2026) and standard deductions |
 | `data/federal/fica_rates.json` | Social Security / Medicare rates and wage base |
-| `data/state/<slug>/<year>.json` | State income tax (2025) |
+| `data/state/<slug>/<year>.json` | State income tax (2025; 2026 for North Carolina) |
 | `data/city/<slug>/<year>.json` | City / county income tax (2025), linked to its state |
 
 State and city files share one schema: `deductions` and `brackets`
@@ -63,5 +68,5 @@ the whole salary. See each location's `notes`.
 ## Tests
 
 ```bash
-pytest
+uv run pytest
 ```

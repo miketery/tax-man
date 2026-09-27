@@ -1,5 +1,8 @@
 import argparse
+import csv
+import io
 import json
+import sys
 from dataclasses import dataclass, field
 from functools import lru_cache
 from pathlib import Path
@@ -26,11 +29,15 @@ ADDITIONAL_MEDICARE_THRESHOLDS = {
 MARGINAL_STEP = 100.0
 
 
+class TaxDataNotFoundError(FileNotFoundError):
+    """Raised when a tax data file cannot be found."""
+
+
 @lru_cache(maxsize=None)
 def load_json(path):
     path = Path(path)
     if not path.exists():
-        raise FileNotFoundError(f"Tax data not found: {path.relative_to(DATA_DIR.parent)}")
+        raise TaxDataNotFoundError(f"Tax data not found: {path.relative_to(DATA_DIR.parent)}")
     with open(path, 'r') as f:
         return json.load(f)
 
@@ -49,6 +56,17 @@ def _locations(kind, year):
     for path in sorted((DATA_DIR / kind).glob(f'*/{year}.json')):
         found[path.parent.name] = load_json(path)
     return found
+
+
+def latest_year(state=None, city=None):
+    """Newest year with federal data and (if given) data for the state/city."""
+    for year in federal_years():
+        if state and not (DATA_DIR / 'state' / state / f'{year}.json').exists():
+            continue
+        if city and not (DATA_DIR / 'city' / city / f'{year}.json').exists():
+            continue
+        return year
+    raise TaxDataNotFoundError(f"No year has data for state={state!r} city={city!r}")
 
 
 def available_states(year):
@@ -254,31 +272,85 @@ def calculate(income, year, status='single', state=None, city=None):
 # CLI
 # ---------------------------------------------------------------------------
 
+def _label(result):
+    return result.city or result.state or 'federal only'
+
+
+def format_text(results):
+    parts = []
+    for r in results:
+        where = f" | {_label(r)}" if (r.state or r.city) else ''
+        rows = [
+            f"Income ${r.income:,.2f} | {r.year} | {FILING_STATUSES[r.status]}{where}",
+            '-' * 64,
+            f"{'Tax':<36}{'Amount':>14}{'Marginal':>14}",
+        ]
+        rows += [f"{line.name:<36}{line.amount:>14,.2f}{line.marginal_rate:>13.2f}%" for line in r.lines]
+        rows += [
+            '-' * 64,
+            f"{'Total':<36}{r.total:>14,.2f}{r.marginal_rate:>13.2f}%",
+            f"Effective rate: {r.effective_rate:.2f}%",
+            f"Take-home pay:  ${r.take_home:,.2f}",
+        ]
+        parts.append('\n'.join(rows))
+    return '\n\n'.join(parts)
+
+
+def _as_dict(r):
+    totals = r.by_category()
+    row = {
+        'income': r.income, 'year': r.year, 'status': r.status, 'state': r.state, 'city': r.city,
+        'federal_tax': totals.get('federal', 0.0), 'fica_tax': totals.get('fica', 0.0),
+        'state_tax': totals.get('state', 0.0), 'city_tax': totals.get('city', 0.0),
+        'total_tax': r.total, 'effective_rate': r.effective_rate, 'marginal_rate': r.marginal_rate,
+        'take_home': r.take_home,
+    }
+    return {k: round(v, 2) if isinstance(v, float) else v for k, v in row.items()}
+
+
+def format_json(results):
+    return json.dumps(
+        [{**_as_dict(r), 'lines': [vars(line) for line in r.lines]} for r in results], indent=2
+    )
+
+
+def format_csv(results):
+    rows = [_as_dict(r) for r in results]
+    buf = io.StringIO()
+    writer = csv.DictWriter(buf, fieldnames=list(rows[0]))
+    writer.writeheader()
+    writer.writerows(rows)
+    return buf.getvalue().rstrip('\n')
+
+
 def main():
-    years = federal_years()
     parser = argparse.ArgumentParser(description="Estimate US income and payroll taxes on wage income.")
     parser.add_argument('income', type=float, help="Your annual gross wage income.")
-    parser.add_argument('--year', '-y', type=int, default=years[0],
-                        help=f"The tax year (default: {years[0]}, the latest with data).")
+    parser.add_argument('--year', '-y', type=int, default=None,
+                        help="The tax year (default: the latest year with data for every location).")
     parser.add_argument('--status', type=str, default='single', choices=list(FILING_STATUSES),
                         help="Your filing status (default: single).")
-    parser.add_argument('--state', type=str, default=None,
-                        help="State slug, e.g. new-york (see data/state/). Omit for federal only.")
-    parser.add_argument('--city', type=str, default=None,
-                        help="City slug, e.g. new-york-city (see data/city/). Implies its state.")
+    parser.add_argument('--state', action='append', default=[],
+                        help="State slug, e.g. new-york (see data/state/). Repeat to compare several.")
+    parser.add_argument('--city', action='append', default=[],
+                        help="City slug, e.g. new-york-city (see data/city/); implies its state. Repeatable.")
+    parser.add_argument('--format', '-f', choices=['text', 'csv', 'json'], default='text',
+                        help="Output format (default: text).")
     args = parser.parse_args()
 
-    result = calculate(args.income, args.year, args.status, args.state, args.city)
+    # Each --state and each --city is its own location; with neither, compute federal only.
+    locations = [(s, None) for s in args.state] + [(None, c) for c in args.city] or [(None, None)]
 
-    print(f"Income ${result.income:,.2f} | {args.year} | {FILING_STATUSES[args.status]}")
-    print('-' * 64)
-    print(f"{'Tax':<36}{'Amount':>14}{'Marginal':>14}")
-    for line in result.lines:
-        print(f"{line.name:<36}{line.amount:>14,.2f}{line.marginal_rate:>13.2f}%")
-    print('-' * 64)
-    print(f"{'Total':<36}{result.total:>14,.2f}{result.marginal_rate:>13.2f}%")
-    print(f"Effective rate: {result.effective_rate:.2f}%")
-    print(f"Take-home pay:  ${result.take_home:,.2f}")
+    try:
+        if args.year is None:
+            args.year = min(latest_year(s, c) for s, c in locations)
+        results = [calculate(args.income, args.year, args.status, s, c) for s, c in locations]
+    except TaxDataNotFoundError as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    formatter = {'text': format_text, 'json': format_json, 'csv': format_csv}[args.format]
+    print(formatter(results))
 
 
 if __name__ == "__main__":

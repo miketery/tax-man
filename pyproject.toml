@@ -1,0 +1,22 @@
+[project]
+name = "tax-man"
+version = "0.1.0"
+description = "A tax calculation tool managing historical and current tax data"
+requires-python = ">=3.10"
+dependencies = [
+    "altair>=5",
+    "pandas",
+    "streamlit>=1.40",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

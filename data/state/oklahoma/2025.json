@@ -1,0 +1,55 @@
+{
+    "name": "Oklahoma",
+    "type": "state",
+    "state_code": "OK",
+    "year": 2025,
+    "deductions": {
+        "single": 7350,
+        "married_filing_jointly": 14700,
+        "married_filing_separately": 7350,
+        "head_of_household": 10350
+    },
+    "brackets": {
+        "single": [
+            [0, 0.25],
+            [1000, 0.75],
+            [2500, 1.75],
+            [3750, 2.75],
+            [4900, 3.75],
+            [7200, 4.75]
+        ],
+        "married_filing_jointly": [
+            [0, 0.25],
+            [2000, 0.75],
+            [5000, 1.75],
+            [7500, 2.75],
+            [9800, 3.75],
+            [12200, 4.75]
+        ],
+        "married_filing_separately": [
+            [0, 0.25],
+            [1000, 0.75],
+            [2500, 1.75],
+            [3750, 2.75],
+            [4900, 3.75],
+            [7200, 4.75]
+        ],
+        "head_of_household": [
+            [0, 0.25],
+            [2000, 0.75],
+            [5000, 1.75],
+            [7500, 2.75],
+            [9800, 3.75],
+            [12200, 4.75]
+        ]
+    },
+    "notes": [
+        "Deductions = standard deduction ($6,350 single/MFS, $12,700 MFJ, $9,350 HoH) + $1,000 personal exemption per person.",
+        "MFJ/HoH use the joint schedule; top bracket threshold of $12,200 per 68 O.S. 2355 (some sources show $14,400 - unverified).",
+        "HB 2764 restructures brackets starting tax year 2026."
+    ],
+    "sources": [
+        "https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/individuals/current/511-Pkt.pdf",
+        "https://www.oscn.net/applications/oscn/DeliverDocument.asp?CiteID=92565"
+    ]
+}

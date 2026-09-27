@@ -1,0 +1,53 @@
+{
+    "name": "Rhode Island",
+    "type": "state",
+    "state_code": "RI",
+    "year": 2025,
+    "deductions": {
+        "single": 16000,
+        "married_filing_jointly": 32000,
+        "married_filing_separately": 16000,
+        "head_of_household": 21450
+    },
+    "brackets": {
+        "single": [
+            [0, 3.75],
+            [79900, 4.75],
+            [181650, 5.99]
+        ],
+        "married_filing_jointly": [
+            [0, 3.75],
+            [79900, 4.75],
+            [181650, 5.99]
+        ],
+        "married_filing_separately": [
+            [0, 3.75],
+            [79900, 4.75],
+            [181650, 5.99]
+        ],
+        "head_of_household": [
+            [0, 3.75],
+            [79900, 4.75],
+            [181650, 5.99]
+        ]
+    },
+    "payroll_taxes": [
+        {
+            "name": "RI TDI/TCI",
+            "brackets": [
+                [0, 1.3],
+                [89200, 0]
+            ]
+        }
+    ],
+    "notes": [
+        "Deductions = standard deduction ($10,900/$21,800/$10,900/$16,350) + $5,100 exemption per person.",
+        "Ignored: phase-out of standard deduction and exemptions for federal AGI above $254,250.",
+        "TDI (incl. TCI) 2025 employee rate 1.3% on wages up to $89,200."
+    ],
+    "sources": [
+        "https://tax.ri.gov/sites/g/files/xkgbur541/files/2025-10/2025%20Tax%20Rate%20and%20Worksheets_d.pdf",
+        "https://tax.ri.gov/sites/g/files/xkgbur541/files/2024-10/ADV_2024_26_Inflation_Adjustments.pdf",
+        "https://dlt.ri.gov/press-releases/2025-tax-rates-unemployment-insurance-and-temporary-disability-insurance"
+    ]
+}

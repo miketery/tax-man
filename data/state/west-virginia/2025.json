@@ -1,0 +1,50 @@
+{
+    "name": "West Virginia",
+    "type": "state",
+    "state_code": "WV",
+    "year": 2025,
+    "deductions": {
+        "single": 2000,
+        "married_filing_jointly": 4000,
+        "married_filing_separately": 2000,
+        "head_of_household": 2000
+    },
+    "brackets": {
+        "single": [
+            [0, 2.22],
+            [10000, 2.96],
+            [25000, 3.33],
+            [40000, 4.44],
+            [60000, 4.82]
+        ],
+        "married_filing_jointly": [
+            [0, 2.22],
+            [10000, 2.96],
+            [25000, 3.33],
+            [40000, 4.44],
+            [60000, 4.82]
+        ],
+        "married_filing_separately": [
+            [0, 2.22],
+            [5000, 2.96],
+            [12500, 3.33],
+            [20000, 4.44],
+            [30000, 4.82]
+        ],
+        "head_of_household": [
+            [0, 2.22],
+            [10000, 2.96],
+            [25000, 3.33],
+            [40000, 4.44],
+            [60000, 4.82]
+        ]
+    },
+    "notes": [
+        "2025 rates after SB 2033 cut. No standard deduction; deductions = $2,000 personal exemption per person.",
+        "Single, MFJ and HoH share one schedule; MFS thresholds are halved."
+    ],
+    "sources": [
+        "https://tax.wv.gov/Individuals/Pages/PersonalIncomeTaxReductionBill.aspx",
+        "https://tax.wv.gov/Documents/PIT/2025/it140.booklet.2025.pdf"
+    ]
+}

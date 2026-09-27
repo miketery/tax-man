@@ -1,0 +1,48 @@
+{
+    "name": "Wisconsin",
+    "type": "state",
+    "state_code": "WI",
+    "year": 2025,
+    "deductions": {
+        "single": 14260,
+        "married_filing_jointly": 26510,
+        "married_filing_separately": 12630,
+        "head_of_household": 18220
+    },
+    "brackets": {
+        "single": [
+            [0, 3.5],
+            [14680, 4.4],
+            [50480, 5.3],
+            [323290, 7.65]
+        ],
+        "married_filing_jointly": [
+            [0, 3.5],
+            [19580, 4.4],
+            [67300, 5.3],
+            [431060, 7.65]
+        ],
+        "married_filing_separately": [
+            [0, 3.5],
+            [9790, 4.4],
+            [33650, 5.3],
+            [215530, 7.65]
+        ],
+        "head_of_household": [
+            [0, 3.5],
+            [14680, 4.4],
+            [50480, 5.3],
+            [323290, 7.65]
+        ]
+    },
+    "notes": [
+        "2025 Wisconsin Act 15 widened the 4.4% bracket (to $50,480 single/HoH, $67,300 MFJ). MFS thresholds are half of MFJ; HoH uses the single schedule.",
+        "Deductions = maximum sliding-scale standard deduction ($13,560/$25,110/$11,930/$17,520) + $700 exemption per person.",
+        "Ignored: standard deduction phase-out (e.g. single: 12% of income over $19,550, zero around $132k)."
+    ],
+    "sources": [
+        "https://www.revenue.wi.gov/TaxForms2025/2025-Form1-Inst.pdf",
+        "https://docs.legis.wisconsin.gov/misc/lfb/budget/2025_27_biennial_budget/285_state_tax_and_fee_modifications_included_in_2025_wisconsin_act_15_7_29_25",
+        "https://www.revenue.wi.gov/Pages/FAQS/pcs-taxrates.aspx"
+    ]
+}

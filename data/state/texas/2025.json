@@ -1,0 +1,32 @@
+{
+    "name": "Texas",
+    "type": "state",
+    "state_code": "TX",
+    "year": 2025,
+    "deductions": {
+        "single": 0,
+        "married_filing_jointly": 0,
+        "married_filing_separately": 0,
+        "head_of_household": 0
+    },
+    "brackets": {
+        "single": [
+            [0, 0.0]
+        ],
+        "married_filing_jointly": [
+            [0, 0.0]
+        ],
+        "married_filing_separately": [
+            [0, 0.0]
+        ],
+        "head_of_household": [
+            [0, 0.0]
+        ]
+    },
+    "notes": [
+        "No state individual income tax on wages."
+    ],
+    "sources": [
+        "https://comptroller.texas.gov/taxes/"
+    ]
+}

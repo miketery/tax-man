@@ -1,0 +1,46 @@
+{
+    "name": "Vermont",
+    "type": "state",
+    "state_code": "VT",
+    "year": 2025,
+    "deductions": {
+        "single": 12950,
+        "married_filing_jointly": 25900,
+        "married_filing_separately": 12950,
+        "head_of_household": 16750
+    },
+    "brackets": {
+        "single": [
+            [0, 3.35],
+            [49400, 6.6],
+            [119700, 7.6],
+            [249700, 8.75]
+        ],
+        "married_filing_jointly": [
+            [0, 3.35],
+            [82500, 6.6],
+            [199450, 7.6],
+            [304000, 8.75]
+        ],
+        "married_filing_separately": [
+            [0, 3.35],
+            [41250, 6.6],
+            [99725, 7.6],
+            [152000, 8.75]
+        ],
+        "head_of_household": [
+            [0, 3.35],
+            [66200, 6.6],
+            [171000, 7.6],
+            [276850, 8.75]
+        ]
+    },
+    "notes": [
+        "Deductions = standard deduction ($7,650/$15,300/$7,650/$11,450) + $5,300 personal exemption per person.",
+        "Ignored: minimum tax of 3% of federal AGI when AGI > $150,000 (if higher than regular tax)."
+    ],
+    "sources": [
+        "https://tax.vermont.gov/sites/tax/files/documents/TaxRateSched-2025.pdf",
+        "https://tax.vermont.gov/filing-season-faqs"
+    ]
+}

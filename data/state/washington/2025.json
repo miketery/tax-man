@@ -1,0 +1,51 @@
+{
+    "name": "Washington",
+    "type": "state",
+    "state_code": "WA",
+    "year": 2025,
+    "deductions": {
+        "single": 0,
+        "married_filing_jointly": 0,
+        "married_filing_separately": 0,
+        "head_of_household": 0
+    },
+    "brackets": {
+        "single": [
+            [0, 0.0]
+        ],
+        "married_filing_jointly": [
+            [0, 0.0]
+        ],
+        "married_filing_separately": [
+            [0, 0.0]
+        ],
+        "head_of_household": [
+            [0, 0.0]
+        ]
+    },
+    "payroll_taxes": [
+        {
+            "name": "WA Paid Family & Medical Leave (employee share)",
+            "brackets": [
+                [0, 0.658],
+                [176100, 0]
+            ]
+        },
+        {
+            "name": "WA Cares Fund",
+            "brackets": [
+                [0, 0.58]
+            ]
+        }
+    ],
+    "notes": [
+        "No income tax on wages; 7% capital gains tax (9.9% above $1M from 2025) not modeled.",
+        "PFML 2025: total premium 0.92%, employee share 71.52% = 0.658% of wages up to SS wage base $176,100.",
+        "WA Cares Fund: 0.58% of all wages, no cap (exemptions for approved opt-outs ignored)."
+    ],
+    "sources": [
+        "https://esd.wa.gov/about-us/news-release/2024/paid-family-medical-leave-premiums-increase-2025",
+        "https://paidleave.wa.gov/estimate-your-paid-leave-payments/",
+        "https://wacaresfund.wa.gov/employers"
+    ]
+}

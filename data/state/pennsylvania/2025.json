@@ -1,0 +1,44 @@
+{
+    "name": "Pennsylvania",
+    "type": "state",
+    "state_code": "PA",
+    "year": 2025,
+    "deductions": {
+        "single": 0,
+        "married_filing_jointly": 0,
+        "married_filing_separately": 0,
+        "head_of_household": 0
+    },
+    "brackets": {
+        "single": [
+            [0, 3.07]
+        ],
+        "married_filing_jointly": [
+            [0, 3.07]
+        ],
+        "married_filing_separately": [
+            [0, 3.07]
+        ],
+        "head_of_household": [
+            [0, 3.07]
+        ]
+    },
+    "payroll_taxes": [
+        {
+            "name": "PA Unemployment Compensation (employee)",
+            "brackets": [
+                [0, 0.07]
+            ]
+        }
+    ],
+    "notes": [
+        "Flat 3.07% on taxable compensation; no standard deduction or personal exemption.",
+        "Ignored: Tax Forgiveness (Schedule SP) for low-income filers; pre-tax 401(k) contributions are not deductible in PA.",
+        "Employee UC withholding 0.07% of all gross wages (no cap).",
+        "Local earned income taxes are handled separately."
+    ],
+    "sources": [
+        "https://www.pa.gov/agencies/revenue/resources/tax-rates/personal-income-tax-rates",
+        "https://www.pa.gov/agencies/dli/resources/for-employers-and-educators/how-to-file/uc-tax/yearly-tax-highlights"
+    ]
+}

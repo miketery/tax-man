@@ -1,0 +1,48 @@
+{
+    "name": "Virginia",
+    "type": "state",
+    "state_code": "VA",
+    "year": 2025,
+    "deductions": {
+        "single": 9680,
+        "married_filing_jointly": 19360,
+        "married_filing_separately": 9680,
+        "head_of_household": 9680
+    },
+    "brackets": {
+        "single": [
+            [0, 2.0],
+            [3000, 3.0],
+            [5000, 5.0],
+            [17000, 5.75]
+        ],
+        "married_filing_jointly": [
+            [0, 2.0],
+            [3000, 3.0],
+            [5000, 5.0],
+            [17000, 5.75]
+        ],
+        "married_filing_separately": [
+            [0, 2.0],
+            [3000, 3.0],
+            [5000, 5.0],
+            [17000, 5.75]
+        ],
+        "head_of_household": [
+            [0, 2.0],
+            [3000, 3.0],
+            [5000, 5.0],
+            [17000, 5.75]
+        ]
+    },
+    "notes": [
+        "Deductions = 2025 standard deduction ($8,750 single/MFS/HoH, $17,500 MFJ) + $930 personal exemption per person.",
+        "Virginia has no HoH status; HoH filers use the single deduction.",
+        "Local taxes not applicable (no local income tax)."
+    ],
+    "sources": [
+        "https://www.tax.virginia.gov/news/new-virginia-tax-laws-july-1-2025",
+        "https://www.tax.virginia.gov/exemptions",
+        "https://budget.lis.virginia.gov/amendment/2025/1/HB1600/Introduced/CR/4-14/3c/"
+    ]
+}

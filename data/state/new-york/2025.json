@@ -34,10 +34,10 @@
         ],
         "married_filing_jointly": [
             [0, 4.0],
-            [17150 , 4.5],
+            [17150, 4.5],
             [23600, 5.25],
             [27900, 5.5],
-            [151550, 6.0],
+            [161550, 6.0],
             [323200, 6.85],
             [2155350, 9.65],
             [5000000, 10.3],
@@ -54,5 +54,34 @@
             [5000000, 10.3],
             [25000000, 10.9]
         ]
-    }
+    },
+    "payroll_taxes": [
+        {
+            "name": "NY Paid Family Leave",
+            "brackets": [
+                [0, 0.388],
+                [91373.88, 0]
+            ]
+        },
+        {
+            "name": "NY SDI (disability benefits)",
+            "brackets": [
+                [0, 0.5],
+                [6240, 0]
+            ]
+        }
+    ],
+    "notes": [
+        "Deductions = NY standard deduction (no personal exemption for filers). Brackets unchanged for 2025; rate cuts on the lower five brackets begin in tax year 2026.",
+        "Ignored: supplemental tax / tax benefit recapture for NY AGI over $107,650, which phases out the benefit of lower brackets for high earners.",
+        "PFL 2025: 0.388% of wages up to the 2025 NYSAWW x 52 ($1,757.19 x 52 = $91,373.88), max $354.53.",
+        "SDI: 0.5% of wages capped at $0.60/week ($31.20/yr), modeled as 0.5% of the first $6,240.",
+        "NYC/Yonkers taxes handled separately as cities."
+    ],
+    "sources": [
+        "https://www.tax.ny.gov/pit/file/tax-tables/it201i-2025.htm",
+        "https://www.tax.ny.gov/pit/file/standard_deductions.htm",
+        "https://paidfamilyleave.ny.gov/2025",
+        "https://www.wcb.ny.gov/content/main/DisabilityBenefits/employee-disability-benefits.jsp"
+    ]
 }

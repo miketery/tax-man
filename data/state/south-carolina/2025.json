@@ -1,0 +1,44 @@
+{
+    "name": "South Carolina",
+    "type": "state",
+    "state_code": "SC",
+    "year": 2025,
+    "deductions": {
+        "single": 15000,
+        "married_filing_jointly": 30000,
+        "married_filing_separately": 15000,
+        "head_of_household": 22500
+    },
+    "brackets": {
+        "single": [
+            [0, 0.0],
+            [3560, 3.0],
+            [17830, 6.0]
+        ],
+        "married_filing_jointly": [
+            [0, 0.0],
+            [3560, 3.0],
+            [17830, 6.0]
+        ],
+        "married_filing_separately": [
+            [0, 0.0],
+            [3560, 3.0],
+            [17830, 6.0]
+        ],
+        "head_of_household": [
+            [0, 0.0],
+            [3560, 3.0],
+            [17830, 6.0]
+        ]
+    },
+    "notes": [
+        "SC starts from federal taxable income, but did not conform to OBBBA for 2025: the extra $750/$1,500/$1,125 federal standard deduction must be added back, so the pre-OBBBA 2025 amounts (15,000/30,000/15,000/22,500) are used. Conformity legislation (H.3368) was pending in 2026 - verify.",
+        "2025 top rate 6.0%. No personal exemption (dependent exemption $4,930 ignored).",
+        "H.4216 replaces the structure from tax year 2026 (1.99%/5.21%, SC Income Adjusted Deduction)."
+    ],
+    "sources": [
+        "https://dor.sc.gov/sites/dor/files/forms/SC1040TT_2025.pdf",
+        "https://dor.sc.gov/income-tax-south-carolina-internal-revenue-code-conformity-update",
+        "https://www.dor.sc.gov/sites/dor/files/policies/IL26-4(revised).pdf"
+    ]
+}

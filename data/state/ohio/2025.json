@@ -1,0 +1,50 @@
+{
+    "name": "Ohio",
+    "type": "state",
+    "state_code": "OH",
+    "year": 2025,
+    "deductions": {
+        "single": 2150,
+        "married_filing_jointly": 4300,
+        "married_filing_separately": 2150,
+        "head_of_household": 2150
+    },
+    "brackets": {
+        "single": [
+            [0, 0.0],
+            [26050, 19.85],
+            [28050, 2.75],
+            [100000, 3.125]
+        ],
+        "married_filing_jointly": [
+            [0, 0.0],
+            [26050, 19.85],
+            [28050, 2.75],
+            [100000, 3.125]
+        ],
+        "married_filing_separately": [
+            [0, 0.0],
+            [26050, 19.85],
+            [28050, 2.75],
+            [100000, 3.125]
+        ],
+        "head_of_household": [
+            [0, 0.0],
+            [26050, 19.85],
+            [28050, 2.75],
+            [100000, 3.125]
+        ]
+    },
+    "notes": [
+        "2025 schedule (all statuses): $0 tax on first $26,050; $342 + 2.75% of excess over $26,050; $2,375.63 + 3.125% over $100,000 (HB 96). Flat 2.75% from 2026.",
+        "Ohio's $342 cliff at $26,050 is smoothed with a 19.85% band from $26,050 to $28,050 (2,000 x 19.85% = $342 + 2.75% x 2,000), so tax is exact at/above $28,050 and below $26,050; understated by < $342 inside the band.",
+        "Deduction = personal exemption of $2,150 per person (MAGI $40,001-$80,000 tier); actual exemption is $2,400 (MAGI <= $40,000), $1,900 ($80,001-$750,000), $0 above $750,000.",
+        "Ignored: $20/exemption credit (MAGI < $30,000), joint filing credit (percentage of tax, max $650), other credits.",
+        "School district and municipal income taxes are handled separately."
+    ],
+    "sources": [
+        "https://dam.assets.ohio.gov/image/upload/v1767095693/tax.ohio.gov/forms/ohio_individual/individual/2025/it1040-booklet.pdf",
+        "https://codes.ohio.gov/ohio-revised-code/section-5747.02",
+        "https://codes.ohio.gov/ohio-revised-code/section-5747.025"
+    ]
+}

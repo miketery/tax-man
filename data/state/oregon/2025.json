@@ -1,0 +1,71 @@
+{
+    "name": "Oregon",
+    "type": "state",
+    "state_code": "OR",
+    "year": 2025,
+    "deductions": {
+        "single": 2835,
+        "married_filing_jointly": 5670,
+        "married_filing_separately": 2835,
+        "head_of_household": 4560
+    },
+    "credits": {
+        "single": 256,
+        "married_filing_jointly": 512,
+        "married_filing_separately": 256,
+        "head_of_household": 256
+    },
+    "brackets": {
+        "single": [
+            [0, 4.75],
+            [4400, 6.75],
+            [11100, 8.75],
+            [125000, 9.9]
+        ],
+        "married_filing_jointly": [
+            [0, 4.75],
+            [8800, 6.75],
+            [22200, 8.75],
+            [250000, 9.9]
+        ],
+        "married_filing_separately": [
+            [0, 4.75],
+            [4400, 6.75],
+            [11100, 8.75],
+            [125000, 9.9]
+        ],
+        "head_of_household": [
+            [0, 4.75],
+            [8800, 6.75],
+            [22200, 8.75],
+            [250000, 9.9]
+        ]
+    },
+    "payroll_taxes": [
+        {
+            "name": "Paid Leave Oregon (employee share)",
+            "brackets": [
+                [0, 0.6],
+                [176100, 0]
+            ]
+        },
+        {
+            "name": "OR Statewide Transit Tax",
+            "brackets": [
+                [0, 0.1]
+            ]
+        }
+    ],
+    "notes": [
+        "Deductions = 2025 standard deduction; credits = $256 personal exemption credit per person (not allowed if AGI > $100,000 single/MFS or $200,000 others - cutoff ignored).",
+        "Ignored: federal income tax subtraction (up to $8,500 in 2025, phased out from $125,000/$250,000 AGI), kicker credit, other credits.",
+        "Paid Leave Oregon 2025: 1% total, employee 0.6% of wages up to $176,100. Statewide transit tax 0.1% of all wages.",
+        "Local taxes (Portland Metro SHS, Multnomah PFA) not included."
+    ],
+    "sources": [
+        "https://www.oregon.gov/dor/programs/individuals/Documents/Full-year%20resident%20tax%20tables.pdf",
+        "https://www.oregon.gov/dor/programs/individuals/pages/credits.aspx",
+        "https://paidleave.oregon.gov/employers/contributions-calculator.html",
+        "https://www.oregon.gov/dor/programs/businesses/Pages/Statewide-Transit-Tax.aspx"
+    ]
+}

@@ -69,7 +69,7 @@ def stacked_bar(df, y_field, y_title):
         alt.Chart(df)
         .mark_bar(cornerRadiusEnd=0, stroke='white', strokeWidth=2, height={'band': 0.6})
         .encode(
-            y=alt.Y(f'{y_field}:N', title=y_title, sort=None),
+            y=alt.Y(f'{y_field}:N', title=y_title, sort=None, axis=alt.Axis(labelLimit=300)),
             x=alt.X('Amount:Q', title='Taxes ($)', axis=alt.Axis(format='$,.0f', grid=True)),
             color=alt.Color(
                 'Type:N',
@@ -153,24 +153,18 @@ with tab_estimate:
     c3.metric('Marginal rate', pct(result.marginal_rate), help='Tax on your next dollar of salary, all taxes combined.')
     c4.metric('Take-home pay', money(result.take_home), help=f'{money(result.take_home / 12)} / month')
 
-    left, right = st.columns([3, 2])
-    with left:
-        st.subheader('Breakdown')
-        df = breakdown_frame(result)
-        st.dataframe(
-            df,
-            hide_index=True,
-            width='stretch',
-            column_config={
-                'Amount': st.column_config.NumberColumn(format='$%,.0f'),
-                '% of income': st.column_config.NumberColumn(format='%.2f%%'),
-                'Marginal rate': st.column_config.NumberColumn(format='%.2f%%'),
-            },
-        )
-    with right:
-        st.subheader('By type')
-        cat = pd.DataFrame(category_frame(result, options.get(location, 'Federal only')))
-        st.altair_chart(stacked_bar(cat, 'Location', ' '), width='stretch')
+    st.subheader('Breakdown')
+    df = breakdown_frame(result)
+    st.dataframe(
+        df,
+        hide_index=True,
+        width='stretch',
+        column_config={
+            'Amount': st.column_config.NumberColumn(format='$%,.0f'),
+            '% of income': st.column_config.NumberColumn(format='%.2f%%'),
+            'Marginal rate': st.column_config.NumberColumn(format='%.2f%%'),
+        },
+    )
 
     notes = location_notes(location, year)
     if notes:
@@ -232,7 +226,7 @@ with tab_compare:
             ),
         }
         table = pd.DataFrame({options[k]: {label: fn(r) for label, fn in rows.items()} for k, r in results.items()})
-        st.dataframe(table, width='stretch')
+        st.dataframe(table, width='stretch', height=35 * (len(table) + 1) + 3)
 
         best = max(results, key=lambda k: results[k].take_home)
         if len(results) > 1:

@@ -1,0 +1,43 @@
+{
+    "name": "Alabama",
+    "type": "state",
+    "state_code": "AL",
+    "year": 2025,
+    "deductions": {
+        "single": 4500,
+        "married_filing_jointly": 11500,
+        "married_filing_separately": 5750,
+        "head_of_household": 8200
+    },
+    "brackets": {
+        "single": [
+            [0, 2.0],
+            [500, 4.0],
+            [3000, 5.0]
+        ],
+        "married_filing_jointly": [
+            [0, 2.0],
+            [1000, 4.0],
+            [6000, 5.0]
+        ],
+        "married_filing_separately": [
+            [0, 2.0],
+            [500, 4.0],
+            [3000, 5.0]
+        ],
+        "head_of_household": [
+            [0, 2.0],
+            [500, 4.0],
+            [3000, 5.0]
+        ]
+    },
+    "notes": [
+        "Deductions = maximum standard deduction (3000/8500/4250/5200) + personal exemption (1500/3000/1500/3000).",
+        "Standard deduction phases down as Alabama AGI rises above ~$23,000 (not modeled).",
+        "Deduction for federal income tax paid and local occupational taxes are not modeled."
+    ],
+    "sources": [
+        "https://www.revenue.alabama.gov/faqs/how-much-is-the-alabama-standard-deduction/",
+        "https://www.revenue.alabama.gov/faqs/what-is-alabamas-individual-income-tax-rate/"
+    ]
+}

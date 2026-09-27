@@ -1,0 +1,158 @@
+{
+    "name": "Connecticut",
+    "type": "state",
+    "state_code": "CT",
+    "year": 2025,
+    "deductions": {
+        "single": 0,
+        "married_filing_jointly": 0,
+        "married_filing_separately": 0,
+        "head_of_household": 0
+    },
+    "brackets": {
+        "single": [
+            [
+                0,
+                2.0
+            ],
+            [
+                10000,
+                4.5
+            ],
+            [
+                50000,
+                5.5
+            ],
+            [
+                100000,
+                6.0
+            ],
+            [
+                200000,
+                6.5
+            ],
+            [
+                250000,
+                6.9
+            ],
+            [
+                500000,
+                6.99
+            ]
+        ],
+        "married_filing_jointly": [
+            [
+                0,
+                2.0
+            ],
+            [
+                20000,
+                4.5
+            ],
+            [
+                100000,
+                5.5
+            ],
+            [
+                200000,
+                6.0
+            ],
+            [
+                400000,
+                6.5
+            ],
+            [
+                500000,
+                6.9
+            ],
+            [
+                1000000,
+                6.99
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                0,
+                2.0
+            ],
+            [
+                10000,
+                4.5
+            ],
+            [
+                50000,
+                5.5
+            ],
+            [
+                100000,
+                6.0
+            ],
+            [
+                200000,
+                6.5
+            ],
+            [
+                250000,
+                6.9
+            ],
+            [
+                500000,
+                6.99
+            ]
+        ],
+        "head_of_household": [
+            [
+                0,
+                2.0
+            ],
+            [
+                16000,
+                4.5
+            ],
+            [
+                80000,
+                5.5
+            ],
+            [
+                160000,
+                6.0
+            ],
+            [
+                320000,
+                6.5
+            ],
+            [
+                400000,
+                6.9
+            ],
+            [
+                800000,
+                6.99
+            ]
+        ]
+    },
+    "payroll_taxes": [
+        {
+            "name": "CT Paid Leave",
+            "brackets": [
+                [
+                    0,
+                    0.5
+                ],
+                [
+                    176100,
+                    0.0
+                ]
+            ]
+        }
+    ],
+    "notes": [
+        "No standard deduction. The personal exemption ($15k single / $24k MFJ / $19k HoH / $12k MFS) phases out fully by ~$45k single / ~$71k MFJ AGI, so it is set to 0 here (overstates tax slightly at low incomes).",
+        "2% phase-out add-back, benefit recapture and percentage-based personal tax credit not modeled.",
+        "CT Paid Leave 0.5% employee contribution up to $176,100."
+    ],
+    "sources": [
+        "https://www.cga.ct.gov/2025/rpt/pdf/2025-R-0080.pdf",
+        "https://www.ctpaidleave.org/how-ct-paid-leave-works/contributions"
+    ]
+}

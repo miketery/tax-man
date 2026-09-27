@@ -1,0 +1,35 @@
+{
+    "name": "Arizona",
+    "type": "state",
+    "state_code": "AZ",
+    "year": 2025,
+    "deductions": {
+        "single": 15750,
+        "married_filing_jointly": 31500,
+        "married_filing_separately": 15750,
+        "head_of_household": 23625
+    },
+    "brackets": {
+        "single": [
+            [0, 2.5]
+        ],
+        "married_filing_jointly": [
+            [0, 2.5]
+        ],
+        "married_filing_separately": [
+            [0, 2.5]
+        ],
+        "head_of_household": [
+            [0, 2.5]
+        ]
+    },
+    "notes": [
+        "Flat 2.5% rate.",
+        "Standard deduction follows OBBBA-increased federal amounts for 2025 (ADOR announcement).",
+        "No personal exemption; dependent credit and charitable standard-deduction increase not modeled."
+    ],
+    "sources": [
+        "https://azdor.gov/forms/individual-income-tax-highlights",
+        "https://azdor.gov/news-center/ador-outlines-guidance-2025-tax-year-income-tax-forms"
+    ]
+}

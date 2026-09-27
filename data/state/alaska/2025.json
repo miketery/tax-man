@@ -1,0 +1,42 @@
+{
+    "name": "Alaska",
+    "type": "state",
+    "state_code": "AK",
+    "year": 2025,
+    "deductions": {
+        "single": 0,
+        "married_filing_jointly": 0,
+        "married_filing_separately": 0,
+        "head_of_household": 0
+    },
+    "brackets": {
+        "single": [
+            [0, 0.0]
+        ],
+        "married_filing_jointly": [
+            [0, 0.0]
+        ],
+        "married_filing_separately": [
+            [0, 0.0]
+        ],
+        "head_of_household": [
+            [0, 0.0]
+        ]
+    },
+    "payroll_taxes": [
+        {
+            "name": "AK Unemployment Insurance (employee)",
+            "brackets": [
+                [0, 0.5],
+                [51700, 0.0]
+            ]
+        }
+    ],
+    "notes": [
+        "No individual income tax.",
+        "Employees pay 0.5% unemployment insurance contribution on the first $51,700 of 2025 wages."
+    ],
+    "sources": [
+        "https://labor.alaska.gov/estax/2025-experience-rates.html"
+    ]
+}

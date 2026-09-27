@@ -1,0 +1,74 @@
+{
+    "name": "Delaware",
+    "type": "state",
+    "state_code": "DE",
+    "year": 2025,
+    "deductions": {
+        "single": 3250,
+        "married_filing_jointly": 6500,
+        "married_filing_separately": 3250,
+        "head_of_household": 3250
+    },
+    "credits": {
+        "single": 110,
+        "married_filing_jointly": 220,
+        "married_filing_separately": 110,
+        "head_of_household": 110
+    },
+    "brackets": {
+        "single": [
+            [0, 0.0],
+            [2000, 2.2],
+            [5000, 3.9],
+            [10000, 4.8],
+            [20000, 5.2],
+            [25000, 5.55],
+            [60000, 6.6]
+        ],
+        "married_filing_jointly": [
+            [0, 0.0],
+            [2000, 2.2],
+            [5000, 3.9],
+            [10000, 4.8],
+            [20000, 5.2],
+            [25000, 5.55],
+            [60000, 6.6]
+        ],
+        "married_filing_separately": [
+            [0, 0.0],
+            [2000, 2.2],
+            [5000, 3.9],
+            [10000, 4.8],
+            [20000, 5.2],
+            [25000, 5.55],
+            [60000, 6.6]
+        ],
+        "head_of_household": [
+            [0, 0.0],
+            [2000, 2.2],
+            [5000, 3.9],
+            [10000, 4.8],
+            [20000, 5.2],
+            [25000, 5.55],
+            [60000, 6.6]
+        ]
+    },
+    "payroll_taxes": [
+        {
+            "name": "DE Paid Leave (employee share)",
+            "brackets": [
+                [0, 0.4],
+                [176100, 0.0]
+            ]
+        }
+    ],
+    "notes": [
+        "Credits = $110 personal credit per exemption.",
+        "Same brackets for all statuses.",
+        "DE Paid Leave total 0.8% from 2025; employer may deduct up to half (0.4%), capped at SS wage base (employer may pay all)."
+    ],
+    "sources": [
+        "https://revenue.delaware.gov/",
+        "https://labor.delaware.gov/delaware-paid-leave"
+    ]
+}

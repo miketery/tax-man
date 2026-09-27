@@ -1,0 +1,89 @@
+{
+    "name": "Hawaii",
+    "type": "state",
+    "state_code": "HI",
+    "year": 2025,
+    "deductions": {
+        "single": 5544,
+        "married_filing_jointly": 11088,
+        "married_filing_separately": 5544,
+        "head_of_household": 7568
+    },
+    "brackets": {
+        "single": [
+            [0, 1.4],
+            [9600, 3.2],
+            [14400, 5.5],
+            [19200, 6.4],
+            [24000, 6.8],
+            [36000, 7.2],
+            [48000, 7.6],
+            [125000, 7.9],
+            [175000, 8.25],
+            [225000, 9.0],
+            [275000, 10.0],
+            [325000, 11.0]
+        ],
+        "married_filing_jointly": [
+            [0, 1.4],
+            [19200, 3.2],
+            [28800, 5.5],
+            [38400, 6.4],
+            [48000, 6.8],
+            [72000, 7.2],
+            [96000, 7.6],
+            [250000, 7.9],
+            [350000, 8.25],
+            [450000, 9.0],
+            [550000, 10.0],
+            [650000, 11.0]
+        ],
+        "married_filing_separately": [
+            [0, 1.4],
+            [9600, 3.2],
+            [14400, 5.5],
+            [19200, 6.4],
+            [24000, 6.8],
+            [36000, 7.2],
+            [48000, 7.6],
+            [125000, 7.9],
+            [175000, 8.25],
+            [225000, 9.0],
+            [275000, 10.0],
+            [325000, 11.0]
+        ],
+        "head_of_household": [
+            [0, 1.4],
+            [14400, 3.2],
+            [21600, 5.5],
+            [28800, 6.4],
+            [36000, 6.8],
+            [54000, 7.2],
+            [72000, 7.6],
+            [187500, 7.9],
+            [262500, 8.25],
+            [337500, 9.0],
+            [412500, 10.0],
+            [487500, 11.0]
+        ]
+    },
+    "payroll_taxes": [
+        {
+            "name": "HI TDI (employee share)",
+            "brackets": [
+                [0, 0.5],
+                [74969, 0.0]
+            ]
+        }
+    ],
+    "notes": [
+        "Deductions = standard deduction (4400/8800/4400/6424) + $1,144 personal exemption per filer.",
+        "2025 brackets widened under Act 46 (2024).",
+        "TDI employee share 0.5% capped at $7.21/week (max weekly wage base $1,441.72, annualized ~$74,969)."
+    ],
+    "sources": [
+        "https://tax.hawaii.gov/forms/d_25table-on/d_25table-on_p13/",
+        "https://files.hawaii.gov/tax/news/announce/ann24-03.pdf",
+        "https://labor.hawaii.gov/dcd/files/2023/05/2025-Max-Weekly-Wage-Base-Rev-2025.03.pdf"
+    ]
+}

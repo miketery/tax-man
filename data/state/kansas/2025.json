@@ -1,0 +1,37 @@
+{
+    "name": "Kansas",
+    "type": "state",
+    "state_code": "KS",
+    "year": 2025,
+    "deductions": {
+        "single": 12765,
+        "married_filing_jointly": 26560,
+        "married_filing_separately": 13280,
+        "head_of_household": 15340
+    },
+    "brackets": {
+        "single": [
+            [0, 5.2],
+            [23000, 5.58]
+        ],
+        "married_filing_jointly": [
+            [0, 5.2],
+            [46000, 5.58]
+        ],
+        "married_filing_separately": [
+            [0, 5.2],
+            [23000, 5.58]
+        ],
+        "head_of_household": [
+            [0, 5.2],
+            [23000, 5.58]
+        ]
+    },
+    "notes": [
+        "Deductions = standard deduction (3605/8240/4120/6180) + exemption ($9,160; $18,320 MFJ)."
+    ],
+    "sources": [
+        "https://ksrevenue.gov/incomebook25.html",
+        "https://www.ksrevenue.gov/pdf/ip25.pdf"
+    ]
+}

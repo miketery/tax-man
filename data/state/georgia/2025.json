@@ -1,0 +1,34 @@
+{
+    "name": "Georgia",
+    "type": "state",
+    "state_code": "GA",
+    "year": 2025,
+    "deductions": {
+        "single": 12000,
+        "married_filing_jointly": 24000,
+        "married_filing_separately": 12000,
+        "head_of_household": 12000
+    },
+    "brackets": {
+        "single": [
+            [0, 5.19]
+        ],
+        "married_filing_jointly": [
+            [0, 5.19]
+        ],
+        "married_filing_separately": [
+            [0, 5.19]
+        ],
+        "head_of_household": [
+            [0, 5.19]
+        ]
+    },
+    "notes": [
+        "Flat 5.19% for 2025 (HB 111, retroactive to Jan 1, 2025).",
+        "Personal exemption eliminated; dependent exemption not modeled."
+    ],
+    "sources": [
+        "https://dor.georgia.gov/taxes/important-tax-updates",
+        "https://legiscan.com/GA/bill/HB111/2025"
+    ]
+}

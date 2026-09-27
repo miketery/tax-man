@@ -1,0 +1,58 @@
+{
+    "name": "District of Columbia",
+    "type": "state",
+    "state_code": "DC",
+    "year": 2025,
+    "deductions": {
+        "single": 15000,
+        "married_filing_jointly": 30000,
+        "married_filing_separately": 15000,
+        "head_of_household": 22500
+    },
+    "brackets": {
+        "single": [
+            [0, 4.0],
+            [10000, 6.0],
+            [40000, 6.5],
+            [60000, 8.5],
+            [250000, 9.25],
+            [500000, 9.75],
+            [1000000, 10.75]
+        ],
+        "married_filing_jointly": [
+            [0, 4.0],
+            [10000, 6.0],
+            [40000, 6.5],
+            [60000, 8.5],
+            [250000, 9.25],
+            [500000, 9.75],
+            [1000000, 10.75]
+        ],
+        "married_filing_separately": [
+            [0, 4.0],
+            [10000, 6.0],
+            [40000, 6.5],
+            [60000, 8.5],
+            [250000, 9.25],
+            [500000, 9.75],
+            [1000000, 10.75]
+        ],
+        "head_of_household": [
+            [0, 4.0],
+            [10000, 6.0],
+            [40000, 6.5],
+            [60000, 8.5],
+            [250000, 9.25],
+            [500000, 9.75],
+            [1000000, 10.75]
+        ]
+    },
+    "notes": [
+        "DC decoupled from the OBBBA standard deduction increase; uses pre-OBBBA 2025 amounts.",
+        "No personal exemption. Same brackets for all statuses. DC paid family leave is employer-funded."
+    ],
+    "sources": [
+        "https://otr.cfo.dc.gov/page/dc-individual-and-fiduciary-income-tax-rates",
+        "https://www.bdo.com/insights/tax/district-of-columbia-takes-emergency-action-to-curb-obbba-related-revenue-loss"
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "name": "Iowa",
+    "type": "state",
+    "state_code": "IA",
+    "year": 2025,
+    "deductions": {
+        "single": 15750,
+        "married_filing_jointly": 31500,
+        "married_filing_separately": 15750,
+        "head_of_household": 23625
+    },
+    "credits": {
+        "single": 40,
+        "married_filing_jointly": 80,
+        "married_filing_separately": 40,
+        "head_of_household": 40
+    },
+    "brackets": {
+        "single": [
+            [0, 3.8]
+        ],
+        "married_filing_jointly": [
+            [0, 3.8]
+        ],
+        "married_filing_separately": [
+            [0, 3.8]
+        ],
+        "head_of_household": [
+            [0, 3.8]
+        ]
+    },
+    "notes": [
+        "Flat 3.8% for 2025.",
+        "Starts from federal taxable income with rolling conformity, so OBBBA federal standard deduction used.",
+        "Credits = $40 personal exemption credit per filer."
+    ],
+    "sources": [
+        "https://revenue.iowa.gov/press-release/2024-10-16/idr-announces-2025-individual-income-tax-brackets-and-interest-rates",
+        "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/1040-expanded-instructions/exemption-credits"
+    ]
+}

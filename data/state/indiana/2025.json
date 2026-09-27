@@ -1,0 +1,33 @@
+{
+    "name": "Indiana",
+    "type": "state",
+    "state_code": "IN",
+    "year": 2025,
+    "deductions": {
+        "single": 1000,
+        "married_filing_jointly": 2000,
+        "married_filing_separately": 1000,
+        "head_of_household": 1000
+    },
+    "brackets": {
+        "single": [
+            [0, 3.0]
+        ],
+        "married_filing_jointly": [
+            [0, 3.0]
+        ],
+        "married_filing_separately": [
+            [0, 3.0]
+        ],
+        "head_of_household": [
+            [0, 3.0]
+        ]
+    },
+    "notes": [
+        "Flat 3.0% state rate; county income taxes (~0.5%-3%) not modeled.",
+        "Deductions = $1,000 exemption per filer."
+    ],
+    "sources": [
+        "https://www.in.gov/dor/individual-income-taxes/"
+    ]
+}

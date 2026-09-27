@@ -1,0 +1,34 @@
+{
+    "name": "Illinois",
+    "type": "state",
+    "state_code": "IL",
+    "year": 2025,
+    "deductions": {
+        "single": 2850,
+        "married_filing_jointly": 5700,
+        "married_filing_separately": 2850,
+        "head_of_household": 2850
+    },
+    "brackets": {
+        "single": [
+            [0, 4.95]
+        ],
+        "married_filing_jointly": [
+            [0, 4.95]
+        ],
+        "married_filing_separately": [
+            [0, 4.95]
+        ],
+        "head_of_household": [
+            [0, 4.95]
+        ]
+    },
+    "notes": [
+        "No standard deduction; deductions = $2,850 exemption per filer.",
+        "Exemption disallowed when AGI exceeds $250k ($500k MFJ) (not modeled)."
+    ],
+    "sources": [
+        "https://tax.illinois.gov/questionsandanswers/answer.851.html",
+        "https://tax.illinois.gov/forms/incometax/currentyear/individual/il-1040-instr/what-is-new.html"
+    ]
+}

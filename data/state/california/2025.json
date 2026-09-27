@@ -1,0 +1,85 @@
+{
+    "name": "California",
+    "type": "state",
+    "state_code": "CA",
+    "year": 2025,
+    "deductions": {
+        "single": 5706,
+        "married_filing_jointly": 11412,
+        "married_filing_separately": 5706,
+        "head_of_household": 11412
+    },
+    "credits": {
+        "single": 153,
+        "married_filing_jointly": 306,
+        "married_filing_separately": 153,
+        "head_of_household": 153
+    },
+    "brackets": {
+        "single": [
+            [0, 1.0],
+            [11079, 2.0],
+            [26264, 4.0],
+            [41452, 6.0],
+            [57542, 8.0],
+            [72724, 9.3],
+            [371479, 10.3],
+            [445771, 11.3],
+            [742953, 12.3],
+            [1000000, 13.3]
+        ],
+        "married_filing_jointly": [
+            [0, 1.0],
+            [22158, 2.0],
+            [52528, 4.0],
+            [82904, 6.0],
+            [115084, 8.0],
+            [145448, 9.3],
+            [742958, 10.3],
+            [891542, 11.3],
+            [1000000, 12.3],
+            [1485906, 13.3]
+        ],
+        "married_filing_separately": [
+            [0, 1.0],
+            [11079, 2.0],
+            [26264, 4.0],
+            [41452, 6.0],
+            [57542, 8.0],
+            [72724, 9.3],
+            [371479, 10.3],
+            [445771, 11.3],
+            [742953, 12.3],
+            [1000000, 13.3]
+        ],
+        "head_of_household": [
+            [0, 1.0],
+            [22173, 2.0],
+            [52530, 4.0],
+            [67716, 6.0],
+            [83805, 8.0],
+            [98990, 9.3],
+            [505208, 10.3],
+            [606251, 11.3],
+            [1000000, 12.3],
+            [1010417, 13.3]
+        ]
+    },
+    "payroll_taxes": [
+        {
+            "name": "CA SDI",
+            "brackets": [
+                [0, 1.2]
+            ]
+        }
+    ],
+    "notes": [
+        "1% Behavioral (Mental) Health Services Tax on taxable income over $1M folded into brackets.",
+        "Personal exemption credit phases out at high AGI (not modeled).",
+        "SDI 1.2% with no wage cap in 2025."
+    ],
+    "sources": [
+        "https://www.ftb.ca.gov/file/personal/tax-calculator-tables-rates.asp",
+        "https://edd.ca.gov/en/payroll_taxes/rates_and_withholding"
+    ]
+}

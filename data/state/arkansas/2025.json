@@ -1,0 +1,57 @@
+{
+    "name": "Arkansas",
+    "type": "state",
+    "state_code": "AR",
+    "year": 2025,
+    "deductions": {
+        "single": 2410,
+        "married_filing_jointly": 4820,
+        "married_filing_separately": 2410,
+        "head_of_household": 2410
+    },
+    "credits": {
+        "single": 29,
+        "married_filing_jointly": 58,
+        "married_filing_separately": 29,
+        "head_of_household": 29
+    },
+    "brackets": {
+        "single": [
+            [0, 0.0],
+            [5600, 2.0],
+            [11200, 3.0],
+            [16000, 3.4],
+            [26400, 3.9]
+        ],
+        "married_filing_jointly": [
+            [0, 0.0],
+            [5600, 2.0],
+            [11200, 3.0],
+            [16000, 3.4],
+            [26400, 3.9]
+        ],
+        "married_filing_separately": [
+            [0, 0.0],
+            [5600, 2.0],
+            [11200, 3.0],
+            [16000, 3.4],
+            [26400, 3.9]
+        ],
+        "head_of_household": [
+            [0, 0.0],
+            [5600, 2.0],
+            [11200, 3.0],
+            [16000, 3.4],
+            [26400, 3.9]
+        ]
+    },
+    "notes": [
+        "Uses the regular 2025 indexed schedule (net income up to $94,700).",
+        "Above $94,700 a different schedule applies (2% on first ~$4,700, 3.9% above, with bracket adjustment); not modeled.",
+        "Credits = $29 personal tax credit per taxpayer."
+    ],
+    "sources": [
+        "https://www.dfa.arkansas.gov/wp-content/uploads/2025_TaxBrackets.pdf",
+        "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf"
+    ]
+}

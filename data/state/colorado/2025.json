@@ -1,0 +1,45 @@
+{
+    "name": "Colorado",
+    "type": "state",
+    "state_code": "CO",
+    "year": 2025,
+    "deductions": {
+        "single": 15750,
+        "married_filing_jointly": 31500,
+        "married_filing_separately": 15750,
+        "head_of_household": 23625
+    },
+    "brackets": {
+        "single": [
+            [0, 4.4]
+        ],
+        "married_filing_jointly": [
+            [0, 4.4]
+        ],
+        "married_filing_separately": [
+            [0, 4.4]
+        ],
+        "head_of_household": [
+            [0, 4.4]
+        ]
+    },
+    "payroll_taxes": [
+        {
+            "name": "CO FAMLI (employee share)",
+            "brackets": [
+                [0, 0.45],
+                [176100, 0.0]
+            ]
+        }
+    ],
+    "notes": [
+        "Flat 4.4% for 2025 (TABOR temporary rate cut not triggered).",
+        "Starts from federal taxable income (rolling conformity), so OBBBA 2025 federal standard deduction is used.",
+        "Addback of standard/itemized deductions for AGI over $300k not modeled.",
+        "FAMLI premium 0.9% in 2025; employer may deduct up to half (0.45%) up to SS wage base $176,100."
+    ],
+    "sources": [
+        "https://leg.colorado.gov/bills/sb25-138",
+        "https://famli.colorado.gov/employers"
+    ]
+}

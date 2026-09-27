@@ -1,0 +1,49 @@
+{
+    "name": "Philadelphia",
+    "type": "city",
+    "state": "pennsylvania",
+    "city_code": "PHL",
+    "year": 2025,
+    "deductions": {
+        "single": 0,
+        "married_filing_jointly": 0,
+        "married_filing_separately": 0,
+        "head_of_household": 0
+    },
+    "brackets": {
+        "single": [
+            [
+                0,
+                3.745
+            ]
+        ],
+        "married_filing_jointly": [
+            [
+                0,
+                3.745
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                0,
+                3.745
+            ]
+        ],
+        "head_of_household": [
+            [
+                0,
+                3.745
+            ]
+        ]
+    },
+    "notes": [
+        "Resident Wage Tax was 3.75% for pay dates Jan 1 - Jun 30, 2025 and 3.74% for pay dates after Jun 30, 2025. 3.745% is the blended (half-year each) rate for evenly paid wages.",
+        "Applies to gross compensation (no deductions). Unearned income is subject to the separate School Income Tax (3.74% from July 1, 2025) which is not modeled.",
+        "An income-based Wage Tax refund for low-income earners exists and is not modeled."
+    ],
+    "sources": [
+        "https://www.phila.gov/2025-06-18-philly-extends-deadline-for-relief-program-announces-tax-cuts/",
+        "https://www.phila.gov/services/payments-assistance-taxes/taxes/business-taxes/business-taxes-by-type/wage-tax-employers/",
+        "https://www.phila.gov/media/20250422110017/Philadelphia-Historic-Tax-Rate-April-2025.pdf"
+    ]
+}

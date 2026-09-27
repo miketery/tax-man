@@ -1,0 +1,91 @@
+{
+    "name": "Portland, OR",
+    "type": "city",
+    "state": "oregon",
+    "city_code": "PDX",
+    "year": 2025,
+    "deductions": {
+        "single": 0,
+        "married_filing_jointly": 0,
+        "married_filing_separately": 0,
+        "head_of_household": 0
+    },
+    "brackets": {
+        "single": [
+            [
+                0,
+                0.0
+            ],
+            [
+                125000,
+                2.5
+            ],
+            [
+                250000,
+                4.0
+            ]
+        ],
+        "married_filing_jointly": [
+            [
+                0,
+                0.0
+            ],
+            [
+                200000,
+                2.5
+            ],
+            [
+                400000,
+                4.0
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                0,
+                0.0
+            ],
+            [
+                125000,
+                2.5
+            ],
+            [
+                250000,
+                4.0
+            ]
+        ],
+        "head_of_household": [
+            [
+                0,
+                0.0
+            ],
+            [
+                200000,
+                2.5
+            ],
+            [
+                400000,
+                4.0
+            ]
+        ]
+    },
+    "payroll_taxes": [
+        {
+            "name": "Portland Arts Tax",
+            "flat": 35
+        }
+    ],
+    "notes": [
+        "Combines Metro Supportive Housing Services (SHS) tax: 1% of taxable income over $125,000 (single/MFS) or $200,000 (MFJ/HoH/QSS), and Multnomah County Preschool for All (PFA) tax: 1.5% over $125,000/$200,000 plus an additional 1.5% over $250,000/$400,000.",
+        "Combined marginal rates: 2.5% above $125k/$200k, 4.0% above $250k/$400k.",
+        "Simplification: both taxes are computed on Oregon taxable income (Metro/County taxable income), which is income after Oregon deductions; deductions are set to 0 here. Assumes residence in both Metro district and Multnomah County (most of the City of Portland; parts in Washington/Clackamas counties owe SHS only).",
+        "SHS thresholds were fixed for tax years 2021-2025 (indexed to inflation afterward).",
+        "Portland Arts Tax: flat $35 per resident adult (18+) with $1,000+ income and household income above the federal poverty level; it is per person, so an MFJ couple would owe $70."
+    ],
+    "sources": [
+        "https://www.portland.gov/revenue/personal-tax",
+        "https://www.portland.gov/revenue/2025met40-instructions",
+        "https://www.oregonmetro.gov/what-metro-does/housing-and-homelessness/supportive-housing-services/pay-my-shs-taxes/shs-taxes-faq",
+        "https://multco.us/file/preschool_for_all_faq/download",
+        "https://www.portland.gov/revenue/arts-tax"
+    ]
+}

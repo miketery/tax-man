@@ -1,0 +1,47 @@
+{
+    "name": "St. Louis",
+    "type": "city",
+    "state": "missouri",
+    "city_code": "STL",
+    "year": 2025,
+    "deductions": {
+        "single": 0,
+        "married_filing_jointly": 0,
+        "married_filing_separately": 0,
+        "head_of_household": 0
+    },
+    "brackets": {
+        "single": [
+            [
+                0,
+                1.0
+            ]
+        ],
+        "married_filing_jointly": [
+            [
+                0,
+                1.0
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                0,
+                1.0
+            ]
+        ],
+        "head_of_household": [
+            [
+                0,
+                1.0
+            ]
+        ]
+    },
+    "notes": [
+        "City of St. Louis earnings tax: 1% of earned income for residents (and nonresidents working in the city); rate in place since 1959.",
+        "Renewed by voters in April 2026; in effect for all of 2025. Does not apply to St. Louis County."
+    ],
+    "sources": [
+        "https://www.stlouis-mo.gov/government/departments/collector/earnings-tax/individual-earnings-tax-info.cfm",
+        "https://www.stlouis-mo.gov/government/departments/collector/earnings-tax/payroll-tax-info.cfm"
+    ]
+}

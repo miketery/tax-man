@@ -1,0 +1,46 @@
+{
+    "name": "Wilmington, DE",
+    "type": "city",
+    "state": "delaware",
+    "city_code": "ILG",
+    "year": 2025,
+    "deductions": {
+        "single": 0,
+        "married_filing_jointly": 0,
+        "married_filing_separately": 0,
+        "head_of_household": 0
+    },
+    "brackets": {
+        "single": [
+            [
+                0,
+                1.25
+            ]
+        ],
+        "married_filing_jointly": [
+            [
+                0,
+                1.25
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                0,
+                1.25
+            ]
+        ],
+        "head_of_household": [
+            [
+                0,
+                1.25
+            ]
+        ]
+    },
+    "notes": [
+        "Wilmington City Wage Tax (earned income tax): 1.25% of gross earned income for residents and nonresidents working in the city (rate set by the Delaware General Assembly)."
+    ],
+    "sources": [
+        "https://www.wilmingtonde.gov/residents/earned-income-tax-and-net-profits-tax",
+        "https://wilmdebudget.org/wp-content/uploads/2024/03/fy25-tax-rates.pdf"
+    ]
+}

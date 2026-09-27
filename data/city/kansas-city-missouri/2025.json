@@ -1,0 +1,47 @@
+{
+    "name": "Kansas City, MO",
+    "type": "city",
+    "state": "missouri",
+    "city_code": "KCMO",
+    "year": 2025,
+    "deductions": {
+        "single": 0,
+        "married_filing_jointly": 0,
+        "married_filing_separately": 0,
+        "head_of_household": 0
+    },
+    "brackets": {
+        "single": [
+            [
+                0,
+                1.0
+            ]
+        ],
+        "married_filing_jointly": [
+            [
+                0,
+                1.0
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                0,
+                1.0
+            ]
+        ],
+        "head_of_household": [
+            [
+                0,
+                1.0
+            ]
+        ]
+    },
+    "notes": [
+        "Kansas City earnings tax: 1% of earned income (wages, net profits) for residents and nonresidents working in the city. Not applied to investment income.",
+        "Renewed by voters in April 2026 for another five years; in effect for all of 2025."
+    ],
+    "sources": [
+        "https://www.kcmo.gov/city-hall/departments/finance/earnings-tax",
+        "https://www.kcmo.gov/city-hall/departments/finance/tax-home/tax-faqs"
+    ]
+}

@@ -1,0 +1,47 @@
+{
+    "name": "Columbus, OH",
+    "type": "city",
+    "state": "ohio",
+    "city_code": "CMH",
+    "year": 2025,
+    "deductions": {
+        "single": 0,
+        "married_filing_jointly": 0,
+        "married_filing_separately": 0,
+        "head_of_household": 0
+    },
+    "brackets": {
+        "single": [
+            [
+                0,
+                2.5
+            ]
+        ],
+        "married_filing_jointly": [
+            [
+                0,
+                2.5
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                0,
+                2.5
+            ]
+        ],
+        "head_of_household": [
+            [
+                0,
+                2.5
+            ]
+        ]
+    },
+    "notes": [
+        "Columbus municipal income tax 2.5% (in effect since Oct 1, 2009), applied to gross qualifying wages.",
+        "Ohio municipal tax applies to qualifying wages/net profits (not interest, dividends, or capital gains); residents working in another city may get a (possibly partial) credit for tax paid there, not modeled."
+    ],
+    "sources": [
+        "https://www.columbus.gov/Government/City-Auditor/Income-Tax-Division/General-Income-Tax-Information",
+        "https://www.columbus.gov/files/sharedassets/city/v/1/finance/financial-reports/2009_cafr.pdf"
+    ]
+}

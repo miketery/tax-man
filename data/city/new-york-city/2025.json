@@ -1,6 +1,7 @@
 {
     "name": "New York City",
     "type": "city",
+    "state": "new-york",
     "city_code": "NYC",
     "year": 2025,
     "deductions": {
@@ -11,28 +12,86 @@
     },
     "brackets": {
         "single": [
-            [0.0, 3.078],
-            [12000.0, 3.762],
-            [25000.0, 3.819],
-            [50000.0, 3.876]
-        ],
-        "married_filing_separately": [
-            [0.0, 3.078],
-            [12000.0, 3.762],
-            [25000.0, 3.819],
-            [50000.0, 3.876]
+            [
+                0,
+                3.078
+            ],
+            [
+                12000,
+                3.762
+            ],
+            [
+                25000,
+                3.819
+            ],
+            [
+                50000,
+                3.876
+            ]
         ],
         "married_filing_jointly": [
-            [0.0, 3.078],
-            [21600.0, 3.762],
-            [45000.0, 3.819],
-            [90000.0, 3.876]
+            [
+                0,
+                3.078
+            ],
+            [
+                21600,
+                3.762
+            ],
+            [
+                45000,
+                3.819
+            ],
+            [
+                90000,
+                3.876
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                0,
+                3.078
+            ],
+            [
+                12000,
+                3.762
+            ],
+            [
+                25000,
+                3.819
+            ],
+            [
+                50000,
+                3.876
+            ]
         ],
         "head_of_household": [
-            [0.0, 3.078],
-            [14400.0, 3.762],
-            [30000.0, 3.819],
-            [60000.0, 3.876]
+            [
+                0,
+                3.078
+            ],
+            [
+                14400,
+                3.762
+            ],
+            [
+                30000,
+                3.819
+            ],
+            [
+                60000,
+                3.876
+            ]
         ]
-    }
+    },
+    "notes": [
+        "NYC resident personal income tax, tax year 2025, rates unchanged from 2024.",
+        "NYC taxable income equals New York State taxable income, so deductions mirror the 2025 NY standard deduction ($8,000 single/MFS, $16,050 MFJ, $11,200 HoH). Dependent exemptions ($1,000 each) are not modeled.",
+        "Ignores NYC household credit, school tax credit, and the NYC UBT; the MCTMT is a separate state-level tax on self-employment earnings."
+    ],
+    "sources": [
+        "https://www.tax.ny.gov/pit/file/tax-tables/2025.htm",
+        "https://www.tax.ny.gov/forms/current-forms/it/it201i.htm",
+        "https://www.tax.ny.gov/pit/file/nyc_yonkers_residents.htm"
+    ]
 }

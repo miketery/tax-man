@@ -1,0 +1,52 @@
+{
+    "name": "Howard County, MD",
+    "type": "city",
+    "state": "maryland",
+    "city_code": "HOCO",
+    "year": 2025,
+    "deductions": {
+        "single": 6550,
+        "married_filing_jointly": 13100,
+        "married_filing_separately": 6550,
+        "head_of_household": 9900
+    },
+    "brackets": {
+        "single": [
+            [
+                0,
+                3.2
+            ]
+        ],
+        "married_filing_jointly": [
+            [
+                0,
+                3.2
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                0,
+                3.2
+            ]
+        ],
+        "head_of_household": [
+            [
+                0,
+                3.2
+            ]
+        ]
+    },
+    "notes": [
+        "Howard County local income tax rate for 2025: 3.20% (flat).",
+        "Maryland local income tax is applied to Maryland taxable income, so deductions = 2025 MD standard deduction + $3,200 personal exemption(s).",
+        "2025 MD standard deduction (Budget Reconciliation and Financing Act of 2025): flat $3,350 single/MFS, $6,700 MFJ/HoH; the old 15%-of-AGI formula and cap was repealed.",
+        "Personal exemption $3,200 per person (1 for single/MFS/HoH, 2 for MFJ; dependents not modeled). It phases out above federal AGI $100,000 ($150,000 MFJ/HoH) and is fully eliminated above $150,000 ($200,000 MFJ/HoH) -- not modeled here, so tax is slightly understated at high incomes.",
+        "2025 legislation raised the maximum county rate cap from 3.20% to 3.30% (effective tax year 2025); counties may also use bracketed rates."
+    ],
+    "sources": [
+        "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/alerts/tax-alert-changes-to-standard-and-itemized-deductions-and-to-state-and-local-income-tax-rates-from-the-2025-legislative-session.pdf",
+        "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/state-payroll/memos/2025/2025-Maryland-State-and-Local-Withholding-Information.pdf",
+        "https://services.marylandcomptroller.gov/taxes?id=kb_article_view&sysparm_article=KB0010014",
+        "https://services.marylandcomptroller.gov/taxes?id=kb_article_view&sysparm_article=KB0010023"
+    ]
+}

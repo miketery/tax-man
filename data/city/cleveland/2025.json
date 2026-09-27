@@ -1,0 +1,48 @@
+{
+    "name": "Cleveland",
+    "type": "city",
+    "state": "ohio",
+    "city_code": "CLE",
+    "year": 2025,
+    "deductions": {
+        "single": 0,
+        "married_filing_jointly": 0,
+        "married_filing_separately": 0,
+        "head_of_household": 0
+    },
+    "brackets": {
+        "single": [
+            [
+                0,
+                2.5
+            ]
+        ],
+        "married_filing_jointly": [
+            [
+                0,
+                2.5
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                0,
+                2.5
+            ]
+        ],
+        "head_of_household": [
+            [
+                0,
+                2.5
+            ]
+        ]
+    },
+    "notes": [
+        "Cleveland municipal income tax 2.5% (raised from 2.0% effective Jan 1, 2017), administered by the Central Collection Agency (CCA).",
+        "Ohio municipal tax applies to qualifying wages/net profits (not interest, dividends, or capital gains); residents working in another city may get a (possibly partial) credit for tax paid there, not modeled."
+    ],
+    "sources": [
+        "https://www.ccaohio.gov/tax-rates",
+        "https://www.ccaohio.gov/member-municipalities/cleveland",
+        "https://www.clevelandohio.gov/sites/clevelandohio/files/finance-docs/documents/2017CAFR.pdf"
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "name": "Detroit",
+    "type": "city",
+    "state": "michigan",
+    "city_code": "DET",
+    "year": 2025,
+    "deductions": {
+        "single": 600,
+        "married_filing_jointly": 1200,
+        "married_filing_separately": 600,
+        "head_of_household": 600
+    },
+    "brackets": {
+        "single": [
+            [
+                0,
+                2.4
+            ]
+        ],
+        "married_filing_jointly": [
+            [
+                0,
+                2.4
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                0,
+                2.4
+            ]
+        ],
+        "head_of_household": [
+            [
+                0,
+                2.4
+            ]
+        ]
+    },
+    "notes": [
+        "Resident rate 2.4% of Detroit taxable income (nonresident 1.2%).",
+        "Personal exemption is $600 per exemption (taxpayer, spouse, and each dependent); modeled as 1 exemption for single/MFS/HoH and 2 for MFJ, dependents not included.",
+        "Detroit taxable income starts from federal AGI with city adjustments (e.g., Social Security and pensions excluded); the calculator applies it to income less exemptions."
+    ],
+    "sources": [
+        "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/City-IIT/TY2025/5118.pdf",
+        "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/City-IIT/TY2025/5313_City-Book.pdf",
+        "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/City-Withholding/TY2025/5469_ty2025.pdf"
+    ]
+}

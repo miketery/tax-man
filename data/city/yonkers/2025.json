@@ -1,0 +1,49 @@
+{
+    "name": "Yonkers",
+    "type": "city",
+    "state": "new-york",
+    "city_code": "YNK",
+    "year": 2025,
+    "deductions": {
+        "single": 0,
+        "married_filing_jointly": 0,
+        "married_filing_separately": 0,
+        "head_of_household": 0
+    },
+    "brackets": {
+        "single": [
+            [
+                0,
+                0.0
+            ]
+        ],
+        "married_filing_jointly": [
+            [
+                0,
+                0.0
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                0,
+                0.0
+            ]
+        ],
+        "head_of_household": [
+            [
+                0,
+                0.0
+            ]
+        ]
+    },
+    "state_tax_surcharge": 16.75,
+    "notes": [
+        "Yonkers resident income tax surcharge = 16.75% of net New York State income tax (IT-201 line 55), not a tax on income directly; brackets are therefore 0%.",
+        "Net state tax is NY tax after most state credits; the calculator's state tax is used as an approximation."
+    ],
+    "sources": [
+        "https://www.tax.ny.gov/pit/file/nyc_yonkers_residents.htm",
+        "https://www.tax.ny.gov/forms/current-forms/it/it201i.htm",
+        "https://www.tax.ny.gov/pdf/publications/withholding/nys50_t_y.pdf"
+    ]
+}

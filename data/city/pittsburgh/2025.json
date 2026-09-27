@@ -1,0 +1,55 @@
+{
+    "name": "Pittsburgh",
+    "type": "city",
+    "state": "pennsylvania",
+    "city_code": "PIT",
+    "year": 2025,
+    "deductions": {
+        "single": 0,
+        "married_filing_jointly": 0,
+        "married_filing_separately": 0,
+        "head_of_household": 0
+    },
+    "brackets": {
+        "single": [
+            [
+                0,
+                3.0
+            ]
+        ],
+        "married_filing_jointly": [
+            [
+                0,
+                3.0
+            ]
+        ],
+        "married_filing_separately": [
+            [
+                0,
+                3.0
+            ]
+        ],
+        "head_of_household": [
+            [
+                0,
+                3.0
+            ]
+        ]
+    },
+    "payroll_taxes": [
+        {
+            "name": "Local Services Tax",
+            "flat": 52
+        }
+    ],
+    "notes": [
+        "Resident Earned Income Tax is 3%: 1% City of Pittsburgh + 2% Pittsburgh School District, applied to gross earned income (no deductions).",
+        "The $52/yr Local Services Tax is levied on people who WORK in Pittsburgh (withheld $1/week or $2/biweekly), not strictly by residence; employees with less than $12,000 of earned income in the city are exempt."
+    ],
+    "sources": [
+        "https://apps.pittsburghpa.gov/finance/Important-Info-Local-Earned-Income-Tax.pdf",
+        "https://www.jordantax.com/faqs-frequently-used-terms",
+        "https://www.pittsburghpa.gov/files/assets/city/v/2/finance/documents/tax-forms/ls-2025-fillable.pdf",
+        "https://www.pittsburghpa.gov/files/assets/city/v/1/finance/documents/tax-faqs/2008_lst_faq.pdf"
+    ]
+}

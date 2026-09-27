@@ -1,0 +1,52 @@
+{
+    "name": "Nebraska",
+    "type": "state",
+    "state_code": "NE",
+    "year": 2025,
+    "deductions": {
+        "single": 8600,
+        "married_filing_jointly": 17200,
+        "married_filing_separately": 8600,
+        "head_of_household": 12600
+    },
+    "credits": {
+        "single": 171,
+        "married_filing_jointly": 342,
+        "married_filing_separately": 171,
+        "head_of_household": 171
+    },
+    "brackets": {
+        "single": [
+            [0, 2.46],
+            [4030, 3.51],
+            [24120, 5.01],
+            [38870, 5.2]
+        ],
+        "married_filing_jointly": [
+            [0, 2.46],
+            [8040, 3.51],
+            [48250, 5.01],
+            [77730, 5.2]
+        ],
+        "married_filing_separately": [
+            [0, 2.46],
+            [4030, 3.51],
+            [24120, 5.01],
+            [38870, 5.2]
+        ],
+        "head_of_household": [
+            [0, 2.46],
+            [7510, 3.51],
+            [38590, 5.01],
+            [57630, 5.2]
+        ]
+    },
+    "notes": [
+        "Nebraska's own standard deduction; $171 nonrefundable personal exemption credit per filer.",
+        "High-income recapture of lower brackets (Tax Calculation Schedule) not modeled."
+    ],
+    "sources": [
+        "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/2025_Tax_Calculation_Schedule.pdf",
+        "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_Individual_Income_Tax_Booklet.pdf"
+    ]
+}

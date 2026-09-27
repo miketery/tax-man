@@ -1,0 +1,38 @@
+{
+    "name": "Mississippi",
+    "type": "state",
+    "state_code": "MS",
+    "year": 2025,
+    "deductions": {
+        "single": 8300,
+        "married_filing_jointly": 16600,
+        "married_filing_separately": 8300,
+        "head_of_household": 11400
+    },
+    "brackets": {
+        "single": [
+            [0, 0.0],
+            [10000, 4.4]
+        ],
+        "married_filing_jointly": [
+            [0, 0.0],
+            [10000, 4.4]
+        ],
+        "married_filing_separately": [
+            [0, 0.0],
+            [10000, 4.4]
+        ],
+        "head_of_household": [
+            [0, 0.0],
+            [10000, 4.4]
+        ]
+    },
+    "notes": [
+        "2025: first $10,000 of taxable income at 0%, 4.4% above; threshold applied per return for all statuses.",
+        "Deductions = standard deduction (2,300/4,600/2,300/3,400) + personal exemption (6,000/12,000/6,000/8,000 head of family)."
+    ],
+    "sources": [
+        "https://www.dor.ms.gov/general-information",
+        "https://www.dor.ms.gov/sites/default/files/tax-forms/individual/80100251%202.pdf"
+    ]
+}

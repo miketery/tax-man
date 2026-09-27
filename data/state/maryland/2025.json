@@ -1,0 +1,73 @@
+{
+    "name": "Maryland",
+    "type": "state",
+    "state_code": "MD",
+    "year": 2025,
+    "deductions": {
+        "single": 6550,
+        "married_filing_jointly": 13100,
+        "married_filing_separately": 6550,
+        "head_of_household": 9900
+    },
+    "brackets": {
+        "single": [
+            [0, 2.0],
+            [1000, 3.0],
+            [2000, 4.0],
+            [3000, 4.75],
+            [100000, 5.0],
+            [125000, 5.25],
+            [150000, 5.5],
+            [250000, 5.75],
+            [500000, 6.25],
+            [1000000, 6.5]
+        ],
+        "married_filing_jointly": [
+            [0, 2.0],
+            [1000, 3.0],
+            [2000, 4.0],
+            [3000, 4.75],
+            [150000, 5.0],
+            [175000, 5.25],
+            [225000, 5.5],
+            [300000, 5.75],
+            [600000, 6.25],
+            [1200000, 6.5]
+        ],
+        "married_filing_separately": [
+            [0, 2.0],
+            [1000, 3.0],
+            [2000, 4.0],
+            [3000, 4.75],
+            [100000, 5.0],
+            [125000, 5.25],
+            [150000, 5.5],
+            [250000, 5.75],
+            [500000, 6.25],
+            [1000000, 6.5]
+        ],
+        "head_of_household": [
+            [0, 2.0],
+            [1000, 3.0],
+            [2000, 4.0],
+            [3000, 4.75],
+            [150000, 5.0],
+            [175000, 5.25],
+            [225000, 5.5],
+            [300000, 5.75],
+            [600000, 6.25],
+            [1200000, 6.5]
+        ]
+    },
+    "notes": [
+        "State tax only; county/local income tax handled separately.",
+        "2025 law: flat standard deduction $3,350 (single/MFS) / $6,700 (MFJ/HoH), new 6.25% and 6.5% brackets.",
+        "Deductions include $3,200 personal exemption per filer; exemption phases out above $100,000 FAGI ($150,000 joint), not modeled.",
+        "FAMLI employee contributions delayed to 2027, so no payroll tax for 2025."
+    ],
+    "sources": [
+        "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/alerts/tax-alert-changes-to-standard-and-itemized-deductions-and-to-state-and-local-income-tax-rates-from-the-2025-legislative-session.pdf",
+        "https://services.marylandcomptroller.gov/taxes?id=kb_article_view&sysparm_article=KB0010014",
+        "https://www.jacksonlewis.com/insights/maryland-employers-famli-contributions-begin-jan-2027"
+    ]
+}

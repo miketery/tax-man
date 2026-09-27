@@ -1,0 +1,49 @@
+{
+    "name": "Massachusetts",
+    "type": "state",
+    "state_code": "MA",
+    "year": 2025,
+    "deductions": {
+        "single": 4400,
+        "married_filing_jointly": 8800,
+        "married_filing_separately": 4400,
+        "head_of_household": 6800
+    },
+    "brackets": {
+        "single": [
+            [0, 5.0],
+            [1083150, 9.0]
+        ],
+        "married_filing_jointly": [
+            [0, 5.0],
+            [1083150, 9.0]
+        ],
+        "married_filing_separately": [
+            [0, 5.0],
+            [1083150, 9.0]
+        ],
+        "head_of_household": [
+            [0, 5.0],
+            [1083150, 9.0]
+        ]
+    },
+    "payroll_taxes": [
+        {
+            "name": "MA PFML",
+            "brackets": [
+                [0, 0.46],
+                [176100, 0]
+            ]
+        }
+    ],
+    "notes": [
+        "No standard deduction; deductions are personal exemptions ($4,400 single/MFS, $8,800 MFJ, $6,800 HoH).",
+        "4% surtax on taxable income over $1,083,150 (2025) folded in as a 9% bracket; same threshold for all statuses.",
+        "PFML employee share 0.46% (0.28% medical + 0.18% family) of wages up to the 2025 Social Security wage base $176,100 (employers with 25+ covered individuals)."
+    ],
+    "sources": [
+        "https://www.mass.gov/info-details/massachusetts-4-surtax-on-taxable-income",
+        "https://www.mass.gov/info-details/massachusetts-personal-income-tax-exemptions",
+        "https://www.mass.gov/info-details/paid-family-and-medical-leave-employer-contribution-rates-and-calculator"
+    ]
+}

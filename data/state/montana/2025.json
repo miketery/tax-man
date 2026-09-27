@@ -1,0 +1,39 @@
+{
+    "name": "Montana",
+    "type": "state",
+    "state_code": "MT",
+    "year": 2025,
+    "deductions": {
+        "single": 15750,
+        "married_filing_jointly": 31500,
+        "married_filing_separately": 15750,
+        "head_of_household": 23625
+    },
+    "brackets": {
+        "single": [
+            [0, 4.7],
+            [21100, 5.9]
+        ],
+        "married_filing_jointly": [
+            [0, 4.7],
+            [42200, 5.9]
+        ],
+        "married_filing_separately": [
+            [0, 4.7],
+            [21100, 5.9]
+        ],
+        "head_of_household": [
+            [0, 4.7],
+            [31700, 5.9]
+        ]
+    },
+    "notes": [
+        "Starting point is federal taxable income (rolling conformity), so OBBBA 2025 federal standard deductions (15,750/31,500/15,750/23,625) are used.",
+        "Ordinary income rates; net long-term capital gains taxed at lower rates (not modeled). HB 337 changes begin 2026."
+    ],
+    "sources": [
+        "https://revenue.mt.gov/montana-tax-simplification-resource-hub",
+        "https://revenuefiles.mt.gov/files/Forms/Montana-Individual-Income-Tax-Return-Form-2-Instructions/2025_Montana_Individual_Income_Tax_Return_Form_2_Instructions.pdf",
+        "https://revenue.mt.gov/news/recent-news/HB-337"
+    ]
+}

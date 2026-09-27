@@ -1,0 +1,34 @@
+{
+    "name": "Michigan",
+    "type": "state",
+    "state_code": "MI",
+    "year": 2025,
+    "deductions": {
+        "single": 5800,
+        "married_filing_jointly": 11600,
+        "married_filing_separately": 5800,
+        "head_of_household": 5800
+    },
+    "brackets": {
+        "single": [
+            [0, 4.25]
+        ],
+        "married_filing_jointly": [
+            [0, 4.25]
+        ],
+        "married_filing_separately": [
+            [0, 4.25]
+        ],
+        "head_of_household": [
+            [0, 4.25]
+        ]
+    },
+    "notes": [
+        "Flat 4.25% for 2025; no standard deduction, $5,800 personal exemption per filer.",
+        "City income taxes (e.g. Detroit) not included."
+    ],
+    "sources": [
+        "https://www.michigan.gov/taxes/iit/tax-guidance/tax-year-info/tax-year-2025-guidance",
+        "https://www.michigan.gov/treasury/reference/taxpayer-notices/2025/05/01/2025-tax-year-income-tax-rate-for-individuals-and-fiduciaries"
+    ]
+}

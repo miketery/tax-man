@@ -1,0 +1,33 @@
+{
+    "name": "North Carolina",
+    "type": "state",
+    "state_code": "NC",
+    "year": 2025,
+    "deductions": {
+        "single": 12750,
+        "married_filing_jointly": 25500,
+        "married_filing_separately": 12750,
+        "head_of_household": 19125
+    },
+    "brackets": {
+        "single": [
+            [0, 4.25]
+        ],
+        "married_filing_jointly": [
+            [0, 4.25]
+        ],
+        "married_filing_separately": [
+            [0, 4.25]
+        ],
+        "head_of_household": [
+            [0, 4.25]
+        ]
+    },
+    "notes": [
+        "Flat 4.25% for 2025; North Carolina's own standard deduction (not tied to federal); no personal exemption."
+    ],
+    "sources": [
+        "https://www.ncdor.gov/taxes-forms/individual-income-tax/tax-rate-schedules",
+        "https://www.ncdor.gov/taxes-forms/individual-income-tax/filing-topics/north-carolina-standard-deduction-or-north-carolina-itemized-deductions"
+    ]
+}

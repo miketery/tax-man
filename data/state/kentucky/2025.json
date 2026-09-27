@@ -1,0 +1,35 @@
+{
+    "name": "Kentucky",
+    "type": "state",
+    "state_code": "KY",
+    "year": 2025,
+    "deductions": {
+        "single": 3270,
+        "married_filing_jointly": 3270,
+        "married_filing_separately": 3270,
+        "head_of_household": 3270
+    },
+    "brackets": {
+        "single": [
+            [0, 4.0]
+        ],
+        "married_filing_jointly": [
+            [0, 4.0]
+        ],
+        "married_filing_separately": [
+            [0, 4.0]
+        ],
+        "head_of_household": [
+            [0, 4.0]
+        ]
+    },
+    "notes": [
+        "Flat 4.0% for 2025 (drops to 3.5% in 2026).",
+        "Standard deduction $3,270 per return; spouses filing separately on a combined return may each claim it (not modeled).",
+        "Family size tax credit for low incomes and local occupational license taxes are not modeled."
+    ],
+    "sources": [
+        "https://revenue.ky.gov/News/pages/kentucky-dor-announces-2025-standard-deduction.aspx",
+        "https://revenue.ky.gov/Forms/740%20Packet%20Instructions.pdf"
+    ]
+}

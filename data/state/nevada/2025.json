@@ -1,0 +1,32 @@
+{
+    "name": "Nevada",
+    "type": "state",
+    "state_code": "NV",
+    "year": 2025,
+    "deductions": {
+        "single": 0,
+        "married_filing_jointly": 0,
+        "married_filing_separately": 0,
+        "head_of_household": 0
+    },
+    "brackets": {
+        "single": [
+            [0, 0.0]
+        ],
+        "married_filing_jointly": [
+            [0, 0.0]
+        ],
+        "married_filing_separately": [
+            [0, 0.0]
+        ],
+        "head_of_household": [
+            [0, 0.0]
+        ]
+    },
+    "notes": [
+        "No individual income tax."
+    ],
+    "sources": [
+        "https://tax.nv.gov/"
+    ]
+}

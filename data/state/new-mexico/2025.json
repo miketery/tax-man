@@ -1,0 +1,56 @@
+{
+    "name": "New Mexico",
+    "type": "state",
+    "state_code": "NM",
+    "year": 2025,
+    "deductions": {
+        "single": 15750,
+        "married_filing_jointly": 31500,
+        "married_filing_separately": 15750,
+        "head_of_household": 23625
+    },
+    "brackets": {
+        "single": [
+            [0, 1.5],
+            [5500, 3.2],
+            [16500, 4.3],
+            [33500, 4.7],
+            [66500, 4.9],
+            [210000, 5.9]
+        ],
+        "married_filing_jointly": [
+            [0, 1.5],
+            [8000, 3.2],
+            [25000, 4.3],
+            [50000, 4.7],
+            [100000, 4.9],
+            [315000, 5.9]
+        ],
+        "married_filing_separately": [
+            [0, 1.5],
+            [4000, 3.2],
+            [12500, 4.3],
+            [25000, 4.7],
+            [50000, 4.9],
+            [157500, 5.9]
+        ],
+        "head_of_household": [
+            [0, 1.5],
+            [8000, 3.2],
+            [25000, 4.3],
+            [50000, 4.7],
+            [100000, 4.9],
+            [315000, 5.9]
+        ]
+    },
+    "notes": [
+        "HB 252 (2024) rate schedule effective tax year 2025; HoH uses the joint schedule.",
+        "Uses the federal standard deduction; OBBBA 2025 amounts (15,750/31,500/15,750/23,625) flow through.",
+        "Low- and middle-income exemption and dependent deductions not modeled."
+    ],
+    "sources": [
+        "https://www.tax.newmexico.gov/all-nm-taxes/current-historic-tax-rates-overview/personal-income-tax-rates/",
+        "https://www.nmlegis.gov/Sessions/24%20Regular/bills/house/HB0252TRS.HTML",
+        "https://www.nmlegis.gov/handouts/ZFFSS%20073125%20Item%203%20OBBBA%20Tax%20Presentation.pdf"
+    ]
+}

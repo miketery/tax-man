@@ -1,0 +1,42 @@
+{
+    "name": "North Dakota",
+    "type": "state",
+    "state_code": "ND",
+    "year": 2025,
+    "deductions": {
+        "single": 15750,
+        "married_filing_jointly": 31500,
+        "married_filing_separately": 15750,
+        "head_of_household": 23625
+    },
+    "brackets": {
+        "single": [
+            [0, 0.0],
+            [48475, 1.95],
+            [244825, 2.5]
+        ],
+        "married_filing_jointly": [
+            [0, 0.0],
+            [80975, 1.95],
+            [298075, 2.5]
+        ],
+        "married_filing_separately": [
+            [0, 0.0],
+            [40475, 1.95],
+            [149025, 2.5]
+        ],
+        "head_of_household": [
+            [0, 0.0],
+            [64950, 1.95],
+            [271450, 2.5]
+        ]
+    },
+    "notes": [
+        "Starting point is federal taxable income (rolling conformity), so OBBBA 2025 federal standard deductions (15,750/31,500/15,750/23,625) are used.",
+        "MFS and HoH thresholds derived from 2024 values indexed like the verified single/MFJ thresholds; could not be confirmed directly."
+    ],
+    "sources": [
+        "https://www.tax.nd.gov/sites/www/files/documents/forms/individual/2025-iit/tax-tables-2025.pdf",
+        "https://www.tax.nd.gov/individual-income-tax"
+    ]
+}
